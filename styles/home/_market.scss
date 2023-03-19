@@ -1,0 +1,413 @@
+.market-area {
+    width: 100%;
+    background-color: #18183F;
+    // height: 100vh;
+    position: relative;
+    z-index: 0;
+    background-image: url('../image/snake-snake.png');
+    background-size: cover;
+    background-position: bottom center;
+    overflow-x: hidden;
+}
+
+.market-mask {
+    // border: 1px solid yellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #18183f, rgba(24, 24, 63, 0.55) 45%, rgba(24, 24, 63, 0));
+}
+
+#shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 60%;
+}
+
+#main-content-collect {
+    // border: 1px solid red;
+    z-index: 1;
+    // position: relative;
+    display: flex;
+
+    justify-content: space-between;
+
+    @include rwd-max(1200px){
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.collect-left {
+    width: 100%;
+}
+
+#collect-title {
+    max-width: 700px;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 150px;
+
+    @include rwd-max(1920px) {
+        margin-bottom: 100px;
+    }
+}
+
+.Create_Gallery_Block {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    @include rwd-max(1350px) {
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+}
+
+#galleryCard {
+    max-width: 266px;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.Buyer_Block {
+    /* border: 1px solid red; */
+    width: 100%;
+    position: relative;
+    max-width: 314px;
+    height: 275px;
+    margin-bottom: 100px;
+
+    @include rwd-max(1350px) {
+        margin-bottom: 50px;
+    }
+}
+
+.Buyer {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+
+}
+
+.Buyer-img {
+    width: 165px;
+}
+
+#Buyer-01 {
+    left: 35%;
+    animation: Buyer 0.1s ease-in-out forwards 1s,
+        Buyer-float 2.5s ease-in-out infinite 1.1s;
+}
+
+@keyframes Buyer {
+    0% {
+        z-index: 0;
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    100% {
+        z-index: 1;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes Buyer-float {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(0px, -10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+#Buyer-02 {
+    top: 40%;
+    left: 10%;
+    animation: Buyer 0.3s ease-in forwards 1.5s,
+        Buyer-float 2.5s ease-in-out infinite 1.5s;
+}
+
+#Buyer-03 {
+    bottom: 0%;
+    right: 0%;
+    animation: Buyer 0.3s ease-in forwards 2s,
+        Buyer-float 2.5s ease-in-out infinite 2s;
+}
+
+.collect-right {
+    max-width: 609px;
+    width: 100%;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include rwd-max(1200px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.collect-right .index-button {
+    margin-top: 50px;
+
+    @include rwd-max(1200px) {
+        margin-top: 30px;
+    }
+}
+
+.PPSR-Rider-block {
+    // border: 1px solid red;
+    width: 609px;
+    height: 530px;
+    width: 100%;
+    // height: 100%;
+    position: relative;
+    margin-top: 50px;
+
+    // height: 530px;
+}
+
+// #rider-block-img{
+//     max-width: 609px;
+//     width: 100%;
+// }
+.PPSR-Rider {
+    // border: 1px solid red;
+    position: absolute !important;
+    top: 0%;
+    /* transform: translateX(-50%); */
+    right: 0%;
+}
+
+@media all and (max-width: 700px) {
+    .PPSR-Rider-block {
+        width: 360px;
+        height: 313px;
+    }
+}
+
+#main-content-market {
+    padding-top: 50px;
+}
+
+.NFT-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    @include rwd-max(1000px) {
+        flex-direction: column;
+    align-items: center;
+    }
+}
+
+.NFT-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @include rwd-max(1350px){
+        margin: 60px 20px 0px;
+    }
+    @include rwd-max(1000px){
+        margin: 0px auto 70px !important;
+    }
+}
+
+#NFT-card-red {
+    margin: 0 100px 80px;
+
+    @include rwd-max(1920px) {
+        margin: 0 80px 80px;
+    }
+
+}
+
+.product {
+    // max-width: 364px;
+    // width: 100%;
+    width: 364px;
+    height: 483px;
+
+    border-radius: 22px;
+    background-color: #17234e;
+    margin-bottom: 60px;
+    position: relative;
+
+    @include rwd-max(1920px) {
+        width: 340px;
+        height: 460px;
+        margin-bottom: 50px;
+    }
+    @include rwd-max(1000px){
+        margin-bottom: 40px;
+    }
+}
+
+.product-mask {
+    // -webkit-backdrop-filter: blur(30px);
+    // backdrop-filter: blur(30px);
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 20px 30px 40px 0 rgba(0, 0, 0, 0.4);
+
+}
+
+.product-content {
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product-icon {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#product-icon-01 {
+    max-width: 300px;
+    // width: 90%;
+    width: 90%;
+}
+
+#product-icon-02 {
+    max-width: 286px;
+    margin: 15px 0 0 20px;
+    // width: 90%;
+    width: 88%;
+}
+
+#product-icon-03 {
+    max-width: 280px;
+    margin: 0px 0 0 20px;
+    // width: 90%;
+    width: 88%;
+}
+
+.attributes {
+    padding: 6px 15px 7px 15px;
+    border-radius: 48px;
+    border: solid 1.5px #eac2fe;
+    background-color: rgba(229, 175, 255, 0.45);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.attributes img {
+    width: 15px;
+    margin-left: 3px;
+}
+
+.attributes span {
+    font-size: 14px;
+    color: var(--white);
+}
+
+#attributes-fire {
+    border: solid 1.5px #fec2c6;
+    background-color: #9e6c9c;
+}
+
+.product-info {
+    // border: 1px solid red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    // height: 100%;
+    padding: 19px;
+}
+
+.product-number {
+    color: var(--light-lavender);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.product-name {
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--white);
+}
+
+.product-text {
+    color: var(--light-lavender);
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+    font-weight: 300;
+
+    @include rwd-max(1920px) {
+        margin-bottom: 22px;
+    }
+}
+
+.product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail {
+    height: 32px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--light-lavender);
+    // padding: 6px 18.8px 6px 17.8px;
+    border-radius: 48px;
+    border: solid 1.5px #eac2fe;
+    background-color: rgba(229, 175, 255, 0.45);
+
+    @include rwd-max(1920px) {
+        font-size: 13px;
+    }
+}
+
+.detail-icon {
+    margin-right: 3px;
+    width: 16px;
+
+}
+
+.detail-heart {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    padding: 11.1px 10px 10.4px 10.3px;
+    border: solid 1.5px #eac2fe;
+    background-color: rgba(229, 175, 255, 0.45);
+}

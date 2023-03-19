@@ -1,0 +1,20 @@
+{
+  "name": "ponponsnake_demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Build & Deploy gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "gh": "git add out/ && git commit -m \"Build & Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
+  },
+  "dependencies": {
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.59.3",
+    "sass-loader": "^13.2.0"
+  }
+}

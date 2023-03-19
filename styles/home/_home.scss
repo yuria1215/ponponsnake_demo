@@ -1,0 +1,97 @@
+/* share */
+
+.index-button{
+    max-width: 180px;
+    width: 100%;
+    display: inline-block;
+    border-radius: 48px;
+    background: linear-gradient(to bottom, #FFEC8F 0%, #FFAA00 100% );
+    background-size: 100% 100%;
+    border: 3px solid #FFD560;
+    outline: none;
+    padding: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--black);
+    white-space: nowrap;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @include rwd-max(1920px) {
+        font-size: 16px;
+        max-width: 160px;
+        padding: 8px;
+    }
+}
+
+.index-button:hover{
+    background: linear-gradient(to bottom, #FFEC8F 0%, #ff9400 100%);
+    /* background-size: 100% 1000%; */
+    background-position: bottom;
+}
+
+@media (max-width: 1200px){
+    .index-button{
+        font-size: 16px;
+        /* padding: 10px 40px; */
+    }
+}
+@media (max-width: 400px){
+    .index-button{
+        font-size: 16px;
+        /* padding: 8px 36px; */
+    }
+
+}
+
+.main-content{
+    // border: 1px solid red;
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 100px 0;
+    z-index: 2;
+
+    @include rwd-max(1200px) {
+        padding: 80px 0;
+    }
+}
+
+// .index-title-block{
+//     /* max-width: 700px; */
+// }
+
+.index-main-title{
+    color: var(--white);
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    
+    @include rwd-max(1920px) {
+        font-size: 42px;
+    }
+    @include rwd-max(1200px) {
+        font-size: 30px;
+    }
+
+}
+
+.index-subtitle{
+    color: var(--pink-purple);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 40px;
+
+    @include rwd-max(1920px) {
+        font-size: 16px;
+    }
+    @include rwd-max(1200px) {
+        font-size: 14px;
+    }
+}
+

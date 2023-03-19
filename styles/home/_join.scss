@@ -1,0 +1,63 @@
+.join-area {
+    background-image: url('../image/join-BG.png');
+    background-size: cover;
+    width: 100%;
+
+}
+
+#main-content-join .index-title-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-content-join .index-subtitle {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.join-info-block {
+    margin: 80px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    // margin: 0 20px;
+    @include rwd-max(1250px) {
+        justify-content: center;
+    }
+
+    @include rwd-max(800px) {
+        margin: 50px auto;
+    }
+}
+
+.join-info {
+    @include rwd-max(1250px) {
+        margin: 0px;
+    }
+}
+
+.rider-group {
+    width: 100%;
+}
+
+.rider-group img {
+    width: 100%;
+}
+
+
+#partner-area {
+    margin-top: 100px;
+}
+
+.partner-block {
+    max-width: 1016px;
+    margin: 0 auto;
+}
+
+.partner-block img {
+    width: 100%;
+}

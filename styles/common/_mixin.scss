@@ -1,0 +1,11 @@
+@mixin rwd($screen_width) {
+  @media(min-width:$screen_width){
+    @content;
+  }
+}
+
+@mixin rwd-max($screen_width) {
+  @media(max-width:$screen_width){
+    @content;
+  }
+}

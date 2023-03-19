@@ -1,0 +1,122 @@
+footer.layout {
+  --bg-color: #18183f;
+  --bg-license-color: #3b4195;
+  --font-color: var(--white);
+  --title-font-color: var(--pink-purple);
+  --item-margin-bottom: 15px;
+
+  color: var(--font-color);
+
+  @include rwd(1200px) {
+    --item-margin-bottom: 20px;
+  }
+
+  .main-content {
+    padding: 20px 0;
+
+    @include rwd(768px) {
+      padding: 40px 0 60px;
+    }
+
+    @include rwd(992px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include rwd(1200px) {
+      padding: 65px 0 80px;
+    }
+  }
+
+  .top {
+    background-color: var(--bg-color);
+
+    .info-wrap {
+      .title {
+        font-weight: 500;
+        font-size: 30px;
+        margin-bottom: 20px;
+
+        @include rwd(1200px) {
+          margin-bottom: 32px;
+        }
+
+        @include rwd(1500px) {
+          margin-bottom: 45px;
+        }
+      }
+
+      .title img {
+        margin-left: 6px;
+      }
+
+      .info-item {
+        font-weight: 300;
+        margin-bottom: var(--item-margin-bottom);
+      }
+    }
+
+    .socials {
+      @include rwd(1500px) {
+        margin-bottom: 25px !important;
+      }
+
+      img {
+        margin-right: 5px;
+
+        @include rwd(768px) {
+          margin-right: 10px;
+        }
+
+        @include rwd(1200px) {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .title {
+      color: var(--title-font-color);
+      font-size: 20px;
+    }
+
+    .links-wrap {
+      @include rwd(768px) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .links-list {
+      margin-right: 40px;
+
+      @include rwd(1200px) {
+        margin-right: 60px;
+      }
+
+      @include rwd(1500px) {
+        margin-right: 80px;
+      }
+
+      .title {
+        margin-top: 25px;
+        margin-bottom: 20px;
+
+        @include rwd(992px) {
+          margin-top: 0px;
+        }
+      }
+
+      .links-item {
+        font-weight: 300;
+        margin-bottom: var(--item-margin-bottom);
+      }
+    }
+  }
+
+  .bottom {
+    font-weight: 300;
+    padding: 25px;
+    text-align: center;
+    background-color: var(--bg-license-color);
+  }
+}
