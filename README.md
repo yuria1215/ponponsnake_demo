@@ -1,7 +1,7 @@
 # PonPonSnake Demo
 
 ### Demo:
-https://yuria1215.github.io//NFT_Demo/
+https://yuria1215.github.io/ponponsnake_demo/
 
 ```bash
 npm run dev
