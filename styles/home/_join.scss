@@ -70,17 +70,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include rwd-max(400px) {
+        padding: 43px 40px;
+    }
 }
 
 .join-info-title {
     color: #FFD560;
     font-size: 22px;
+
+    @include rwd-max(400px) {
+        font-size: 20px;
+    }
 }
 
 .info-title-border {
     width: 200px;
     border: 1px solid #FFD560;
     margin: 14px auto 26px;
+
+    @include rwd-max(400px) {
+        margin: 14px auto 24px;
+    }
 }
 
 .join-info-text {
@@ -89,6 +101,10 @@
     color: var(--white);
     line-height: 1.5;
     text-align: center;
+
+    @include rwd-max(400px) {
+        font-size: 14px;
+    }
 }
 
 .rider-group-block {
@@ -109,7 +125,7 @@
     justify-content: space-between;
     align-items: flex-end;
     z-index: 1;
-    
+
 }
 
 #rider-01 {
@@ -152,6 +168,7 @@
     width: 18%;
     margin-bottom: -10px;
     animation: rider 10s ease-in-out 0.6s infinite;
+
     @include rwd-max(1000px) {
         margin-bottom: -0px;
     }
