@@ -1,13 +1,13 @@
-// import { useEffect } from "react";
-// import MapJquery from './jquery/map.jq.js'
+import { useEffect } from "react";
+import telescopicSightMove from './jquery/map.jq'
 
 export default function Map() {
-    //     useEffect(() => {
-    //     const hasJQuery = Boolean(window.jQuery)
-    //     if (hasJQuery) {
-    //         MapJquery()
-    //     }
-    // }, []);
+        useEffect(() => {
+        const hasJQuery = Boolean(window.jQuery)
+        if (hasJQuery) {
+            telescopicSightMove()
+        }
+    }, []);
 
     return (
         <section className="map-area" >
@@ -67,7 +67,7 @@ export default function Map() {
             {/* 地圖 */}
             <div className="map-area">
 
-                <div className="map">
+                <div className="map ">
                     <div className="map-mask"></div>
                     <img className="" src={`${process.env.BASE_PATH}/images/map/Travel_map_long.png`} alt="" />
                 </div>
