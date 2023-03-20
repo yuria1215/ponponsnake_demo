@@ -22,7 +22,7 @@ function travelMapMove(num) {
         "Traders from all around the world gather at Mamba. Mamba has the most complete merchandise, even the most extensive black market conceals in its well-known desert.",
         "Located in the north of Serpent where land is barren, Nord has the problem of food shortage. Even so, the Abundance of mineral resources gives them the strength to develop powerful weapons.",
         "Chao Yang worships the snake god, they are the closest kingdom to the abyss. ",
-        "Faline serves the honor, their residents also regard nobility and elite as the most highest. Compared to the disorder of the village, the luxurious palace shows the contrast between rich and poor. The rulers of Faline were all queens, they were obsessed with the extravagant lifestyle and noble activities.",
+        "Faline serves the honor, their residents also regard nobility and elite as the most highest. Compared to the disorder of the village, the luxurious palace shows the contrast between rich and poor. ",
         "An undeveloped dark area, full of mysterious power."]
     const $flag = $('.RegionalFlag-icon')
     const $landmark = $('.TravelMap-landmark-icon')
