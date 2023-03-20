@@ -54,9 +54,11 @@
     // background-image: url('../image/join-info-BG.png');
 
 }
-.info-BG{
+
+.info-BG {
     width: 100%;
 }
+
 .join-info-inner {
     // border: 1px solid red;
     padding: 43px;
@@ -74,26 +76,132 @@
     color: #FFD560;
     font-size: 22px;
 }
-.info-title-border{
+
+.info-title-border {
     width: 200px;
     border: 1px solid #FFD560;
     margin: 14px auto 26px;
 }
-.join-info-text{
+
+.join-info-text {
     font-size: 16px;
     font-weight: 300;
     color: var(--white);
     line-height: 1.5;
     text-align: center;
 }
+
+.rider-group-block {
+    width: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+.rider-group-block img {
+    width: 100%;
+}
+
 .rider-group {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 1;
 }
 
-.rider-group img {
-    width: 100%;
+#rider-01 {
+    max-width: 190px;
+    width: 17%;
+    margin-bottom: -10px;
+    animation: rider 10s ease-in-out 0s infinite;
+
+    @include rwd-max(1000px) {
+        margin-bottom: -0px;
+    }
 }
 
+#rider-02 {
+    max-width: 200px;
+    width: 18%;
+    animation: rider 10s ease-in-out 0.4s infinite;
+}
+
+#rider-03 {
+    max-width: 150px;
+    width: 15%;
+
+    animation: rider 10s ease-in-out 0.8s infinite;
+}
+
+#rider-04 {
+    max-width: 160px;
+    width: 15%;
+    margin-bottom: -20px;
+    animation: rider 10s ease-in-out 0.2s infinite;
+
+    @include rwd-max(1000px) {
+        margin-bottom: -0px;
+    }
+}
+
+#rider-05 {
+    max-width: 190px;
+    width: 18%;
+    margin-bottom: -10px;
+    animation: rider 10s ease-in-out 0.6s infinite;
+    @include rwd-max(1000px) {
+        margin-bottom: -0px;
+    }
+}
+
+@keyframes rider {
+    0% {
+        transform: translateY(0px);
+    }
+
+    2% {
+        transform: translateY(-20px);
+    }
+
+    4% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.line-animation {
+    position: absolute;
+    bottom: -10%;
+    width: 100%;
+    overflow: hidden;
+    // margin-bottom: -190px;
+    z-index: -1;
+}
+
+#line-animation-run {
+    width: 200%;
+
+    animation: line-animation-run 70s linear infinite;
+}
+
+@keyframes line-animation-run {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
 
 #partner-area {
     margin-top: 100px;

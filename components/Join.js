@@ -58,8 +58,20 @@ export default function Join() {
 
                 </div>
 
-                <div className="rider-group">
-                    <img src={`${process.env.BASE_PATH}/images/join/KK.png`} alt="" />
+                <div className="rider-group-block">
+                    {/* <img src={`${process.env.BASE_PATH}/images/join/KK.png`} alt="" /> */}
+
+                    <div className="rider-group">
+                        <img id="rider-01" src={`${process.env.BASE_PATH}/images/join/K1.png`} alt="" />
+                        <img id="rider-02" src={`${process.env.BASE_PATH}/images/join/K2.png`} alt="" />
+                        <img id="rider-03" src={`${process.env.BASE_PATH}/images/join/K3.png`} alt="" />
+                        <img id="rider-04" src={`${process.env.BASE_PATH}/images/join/K4.png`} alt="" />
+                        <img id="rider-05" src={`${process.env.BASE_PATH}/images/join/K5.png`} alt="" />
+                    </div>
+                    <div className="line-animation">
+                        <img id="line-animation-run" src={`${process.env.BASE_PATH}/images/join/rider-group-line-long.png`} alt="" />
+                    </div>
+
                 </div>
 
 
