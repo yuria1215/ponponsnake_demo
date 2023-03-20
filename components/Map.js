@@ -193,9 +193,11 @@ export default function Map() {
                             </div>
                         </div>
                         <div className="RegionalFlag-name">
-                            <p>Della</p>
+                            {/* <p>Della</p> */}
+                            
                             {/* <img src={`${process.env.BASE_PATH}/images/map/RegionalFlag-title-BG.png" alt=""/> */}
                         </div>
+                        <div className="RegionalFlag-info"></div>
 
                     </div>
 
