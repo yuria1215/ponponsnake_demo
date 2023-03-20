@@ -8,6 +8,7 @@ function animateReset() {
     setTimeout(() => $('.map-area').addClass('animate_start'), 10)
     // clearTimeout(timeout1);
     // clearTimeout(timeout2);
+    $('.RegionalBadge-icon' ).removeClass('RegionalBadge-icon-current');
     window.saveMapTimeOut.map(element => {   
         clearTimeout(element)
     });
