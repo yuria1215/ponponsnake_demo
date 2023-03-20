@@ -1,4 +1,247 @@
+import { useEffect } from "react";
+import ReactEcharts from 'echarts-for-react';
+import echarts from 'echarts';
+
+
 export default function Token() {
+
+    const option = {
+
+        series: [
+            {
+                name: 'Access From',
+                type: 'pie',
+                // selectedMode: 'single',
+                // radius: '90%',
+                radius: ['45%', '70%'],
+
+                // label: {
+                //     show: true,
+                //     position: 'inner',
+                //     position: 'center',
+                //     fontSize: 30,
+                //     color: "#1F3240",
+                // },
+
+                // emphasis: {
+                //     label: {
+                //       show: true,
+                //       fontSize: '40',
+                //       fontWeight: 'bold'
+                //     },
+                //   },
+
+                label: {
+                    fontSize: 15,
+                    lineHeight: 18,
+                    color: '#ffffff',
+                    // overflow: "break"
+
+                },
+
+                labelLine: {
+                    show: true,
+                    // length: 10,
+                    normal: {
+                        lineStyle: {
+                            color: '#ffffff',
+                            width: 2,
+                        },
+                        // smooth: 0.2,
+                        length: 30,
+                    },
+
+
+                },
+                animationDelay: function (idx) {
+                    return idx + 600;
+                },
+
+                itemStyle: {
+                    color: '#00000000',
+                },
+
+                data: [
+                    // DAO Treasury
+                    { value: 45, name: "label_01" },
+                    // CQI Team
+                    { value: 16, name: "label_02" },
+                    // Event
+                    { value: 2, name: "label_03" },
+                    // Develop
+                    { value: 8, name: "label_04" },
+                    // Advisor
+                    { value: 4, name: "label_05" },
+                    // Public Sale
+                    { value: 4, name: "label_06" },
+                    // Private Placement 
+                    { value: 12, name: "label_07" },
+                    // Seed(0.06USD)
+                    { value: 6, name: "label_08" },
+                    // Charity
+                    { value: 3, name: "label_09" }
+                ],
+
+            },
+
+            {
+                name: 'Access From',
+                type: 'pie',
+                // selectedMode: 'single',
+                // radius: '90%',
+                radius: ['45%', '70%'],
+
+                label: {
+                    show: false,
+                    // position: 'inner',
+                    position: 'center',
+                    fontSize: 30,
+                    color: '#ffffff'
+                },
+                itemStyle: {
+                    borderRadius: 5,
+                    borderColor: '#152837',
+                    borderWidth: 0.5,
+                    shadowBlur: 200,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '44',
+                        fontWeight: 'bold'
+                    },
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+
+                labelLine: {
+                    show: true,
+                    length: 10,
+                    normal: {
+                        lineStyle: {
+                            color: '#69ADA2',
+                            width: 2,
+                        },
+                    },
+                },
+                // color: [
+
+                //     // // DAO Treasury 45%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#745858'
+                //     }, {
+                //         offset: 1,
+                //         color: '#B7836F'
+                //     }]),
+
+                //     // CQI Team 16%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#A1ADC4'
+                //     }, {
+                //         offset: 1,
+                //         color: '#E2EBFE'
+                //     }]),
+
+                //     // Event 2%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#CCC1DC'
+                //     }, {
+                //         offset: 1,
+                //         color: '#F4ECFF'
+                //     }]),
+
+                //     // Develop 8%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#99C5D4'
+                //     }, {
+                //         offset: 1,
+                //         color: '#AEDCEC'
+                //     }]),
+
+                //     // Advisor 4%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#DCB59A'
+                //     }, {
+                //         offset: 1,
+                //         color: '#FCD4B9'
+                //     }]),
+
+                //     // Public Sale 4%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#EFE4BE'
+                //     }, {
+                //         offset: 1,
+                //         color: '#F1E7C5'
+                //     }]),
+
+                //     // Private Placement 12%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#D0E8C9'
+                //     }, {
+                //         offset: 1,
+                //         color: '#ECFFE6'
+                //     }]),
+
+                //     // Seed(0.06USD) 6%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#EFEFEF'
+                //     }, {
+                //         offset: 1,
+                //         color: '#ffffff'
+                //     }]),
+
+                //     // Charity 3%
+                //     new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                //         offset: 0,
+                //         color: '#A9D2EF'
+                //     }, {
+                //         offset: 1,
+                //         color: '#CBE9FF'
+                //     }])
+                // ],
+
+
+                data: [
+                    { value: 45, name: '45%' },
+                    // CQI Team
+                    { value: 16, name: '16%' },
+                    // Event
+                    { value: 2, name: '2%' },
+                    // Develop
+                    { value: 8, name: '8%' },
+                    // Advisor
+                    { value: 4, name: '4% ' },
+                    // Public Sale
+                    { value: 4, name: '4%' },
+                    // Private Placement 
+                    { value: 12, name: '12%' },
+                    // Seed(0.06USD)
+                    { value: 6, name: '6%' },
+                    // Charity
+                    { value: 3, name: '3%' }
+                ],
+
+            }
+        ]
+    };
+    // useEffect(() => {
+    //     const hasJQuery = Boolean(window.jQuery)
+    //     if (hasJQuery) {
+    //         chartInit()
+    //     }
+    // }, []);
     return (
         <section className="token-area">
 
@@ -19,10 +262,15 @@ export default function Token() {
                         <img id="ernc-people" src={`${process.env.BASE_PATH}/images/token/ernc-people.png`} alt="" />
 
                         <div className="token-chart">
-                        <img src={`${process.env.BASE_PATH}/images/token/chart.png`} alt="" />
-                            {/* <div class="Pie-Chart" id="Pie-Chart">
-                                
-                            </div> */}
+
+                        {/* <img src={`${process.env.BASE_PATH}/images/token/chart.png`} alt="" /> */}
+                            <div className="Pie-Chart" id="Pie-Chart">
+                            <ReactEcharts
+                                echarts={echarts}
+                                option={option}
+                                style={{ height: '400px', width: '100%' }}
+                                />
+                            </div>
                         </div>
                     </div>
 
