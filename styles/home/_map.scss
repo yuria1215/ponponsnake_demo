@@ -2,6 +2,7 @@
     width: 100%;
     // height: 100vh;
     background-color: #151734;
+    z-index: 0;
 }
 #main-content-badge{
     padding-bottom: 0px;
@@ -84,6 +85,7 @@
     // border: 1px solid red;
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 .map-mask{
     position: absolute;
@@ -270,12 +272,13 @@
 .Area-display-block {
     border: 1px solid red;
 
-
+    opacity: 0;
     // display: none;
 }
 
 /* 探照鏡 */
 .TelescopicSight {
+    z-index: 5;
     position: relative;
     position: absolute;
     width: 250px;
@@ -283,13 +286,14 @@
     border-radius: 50%;
     /* outline: 3px solid #DCBD71; */
     /* outline-offset: 15px; */
+    transform: translate(-50%, -100%);
 
-    box-shadow: 0px 0px 0px 2000px #00000070;
+    box-shadow: 0px 0px 0px 2000px #15173480;
 
     transition: 0.5s ease-in-out;
 
 
-    /* display: none; */
+    // display: none;
 }
 
 /* 探照鏡 */
@@ -427,6 +431,7 @@
 
 /* 地域旗幟 */
 .RegionalFlag-block {
+    z-index: 5;
     /* border: 1px solid red; */
     position: absolute;
     display: flex;
@@ -628,8 +633,8 @@
     animation: material-display 1s ease-in-out 1s forwards;
 }
 .TravelMap-01-Della .TelescopicSight {
-    bottom: 7%;
-    left: 52%;
+    left: 60%;
+    top: 90%;
 }
 
 .TravelMap-01-Della .RegionalFlag-block {
@@ -638,8 +643,8 @@
 }
 
 .TravelMap-02-Potronis .TelescopicSight {
-    top: 21%;
-    left: 60%;
+    left: 73%;
+    top: 66%;
 }
 
 .TravelMap-02-Potronis .RegionalFlag-block {
@@ -648,8 +653,8 @@
 }
 
 .TravelMap-03-Nord .TelescopicSight {
-    top: 3%;
-    left: 35.5%;
+    left: 46%;
+    top: 34%;
 }
 
 .TravelMap-03-Nord .RegionalFlag-block {
@@ -658,8 +663,8 @@
 }
 
 .TravelMap-04-Chaoyang .TelescopicSight {
-    top: 40%;
-    left: 22%;
+    left: 35%;
+    top: 74%;
 }
 
 .TravelMap-04-Chaoyang .RegionalFlag-block {
@@ -668,8 +673,8 @@
 }
 
 .TravelMap-05-Faline .TelescopicSight {
-    top: 12%;
-    left: 8.5%;
+    left: 26%;
+    top: 45%;
 }
 
 .TravelMap-05-Faline .RegionalFlag-block {
@@ -678,8 +683,8 @@
 }
 
 .TravelMap-06-Ruins .TelescopicSight {
-    top: 14.5%;
-    left: 41%;
+    left: 54%;
+    top: 54%;
 }
 
 .TravelMap-06-Ruins .RegionalFlag-block {
@@ -783,14 +788,14 @@
     .RegionalFlag-name p{
         font-size: 22px;
     }
-    .TravelMap-01-Della .TelescopicSight {
-        bottom: 6.5%;
-        left: 49%;
-    }
-    .TravelMap-06-Ruins .TelescopicSight {
-        top: 16%;
-        left: 41%;
-    }
+    // .TravelMap-01-Della .TelescopicSight {
+    //     bottom: 6.5%;
+    //     left: 49%;
+    // }
+    // .TravelMap-06-Ruins .TelescopicSight {
+    //     top: 16%;
+    //     left: 41%;
+    // }
 }
 
 @media all and (max-width: 1000px){
@@ -830,14 +835,14 @@
     .RegionalFlag-name p{
         font-size: 18px;
     }
-    .TravelMap-01-Della .TelescopicSight {
-        bottom: 6.5%;
-        left: 48%;
-    }
-    .TravelMap-06-Ruins .TelescopicSight {
-        top: 13%;
-        left: 40.5%;
-    }
+    // .TravelMap-01-Della .TelescopicSight {
+    //     bottom: 6.5%;
+    //     left: 48%;
+    // }
+    // .TravelMap-06-Ruins .TelescopicSight {
+    //     top: 13%;
+    //     left: 40.5%;
+    // }
     .TravelMap-compass{
         max-width: 90px;
         height: 90px;

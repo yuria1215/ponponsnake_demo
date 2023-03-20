@@ -1,10 +1,15 @@
 // https://dev.origingaia.com/FrontPage_Travel
 
 function animateReset() {
+
     $('.map-area').removeClass('animate_start')
     $('.TelescopicSight').removeClass('TelescopicSight-move')
     $('.RegionalBadge-name').css("opacity","0");
     setTimeout(() => $('.map-area').addClass('animate_start'), 10)
+
+    setTimeout(() => $('.Area-display-block ').css("opacity","0"), 10000)
+    setTimeout(() => $('.map-pick-block ').css("opacity","1"), 10000)
+    
 }
 
 function travelMapMove(num) {
@@ -16,6 +21,8 @@ function travelMapMove(num) {
     const $TravelMap = $('.map-area')
 
     const current_type = TravelMap_types[num - 1]
+
+
   
     $TravelMap.attr('class', `map-area TravelMap-0${num}-${current_type}`)
     $text.text(current_type)
@@ -30,6 +37,10 @@ export default function telescopicSightMove() {
     $('.RegionalBadge-icon-block img').on('click', function () {
         const id = $(this).attr('id')
         const num = id.slice(id.length - 1)
+        
+        $('.Area-display-block ').css("opacity","1")
+        $('.map-pick-block ').css("opacity","0")
+
         
         travelMapMove(num)
         $(this).siblings('.RegionalBadge-name').css("opacity","1");
