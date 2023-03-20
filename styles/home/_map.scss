@@ -268,10 +268,10 @@
 
 /* 區域內容顯示 */
 .Area-display-block {
-    // border: 1px solid red;
+    border: 1px solid red;
 
 
-    display: none;
+    // display: none;
 }
 
 /* 探照鏡 */
@@ -616,7 +616,17 @@
         z-index: 1;
     }
 }
-
+@keyframes material-display{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.7;
+    }
+}
+.animate_start .Pie-Chart-material{
+    animation: material-display 1s ease-in-out 1s forwards;
+}
 .TravelMap-01-Della .TelescopicSight {
     bottom: 7%;
     left: 52%;
@@ -675,4 +685,168 @@
 .TravelMap-06-Ruins .RegionalFlag-block {
     top: 18%;
     left: 11%;
+}
+
+
+
+/* animate_start */
+
+/* 雲 TravelMap-cloud */
+.animate_start #TravelMap-cloud-01 {
+    animation: TravelMap-cloud-01-a1 3s ease-in-out ,
+        TravelMap-cloud-01-a2 30s infinite 3s;
+}
+.animate_start #TravelMap-cloud-02 {
+    animation: TravelMap-cloud-02-a1 3s ease-in-out,
+    TravelMap-cloud-02-a2 30s infinite 3s;
+}
+.animate_start #TravelMap-cloud-03 {
+    animation: TravelMap-cloud-03-a1 2s ease-in-out,
+    TravelMap-cloud-03-a2 30s infinite 2s;
+}
+
+/* 指針 */
+.animate_start .TravelMap-01-Della #compass_outside {
+    /* animation: compass-shake-01 1.8s ease-in forwards; */
+}
+
+
+
+/* 探照鏡 */
+.animate_start .TravelMap-circle {
+    animation: TravelMap-circle-rotate 0.5s ease-in 0.7s forwards;
+}
+
+.animate_start .TravelMap-circle-line circle {
+    animation: TravelMap-circle 0.7s linear forwards;
+}
+
+.animate_start .TravelMap-circle-ball {
+    animation: circle-ball-display 0.3s ease-in 0.5s forwards;
+}
+.animate_start .TravelMap-landmark {
+    animation: overflow 0.1s ease-in-out 1.8s forwards;
+}
+.animate_start .TravelMap-landmark-icon {
+    animation: TravelMap-landmark-display 0.4s ease-in-out 1.4s forwards,
+    TravelMap-landmark-float 2s linear 1.8s infinite;
+}
+
+/* 地域旗幟 */
+.animate_start .RegionalFlag::before {
+    animation: RegionalFlag-display 0.3s ease-in 1.2s forwards;
+}
+.animate_start .RegionalFlag::after {
+    animation: RegionalFlag-display 0.3s ease-in 1.2s forwards;
+}
+.animate_start .RegionalFlag-BG {
+    animation: RegionalFlag-BG-display 1.5s ease-in 0s forwards;
+}
+.animate_start .RegionalFlag-icon-block {
+    animation: RegionalFlag-icon-display 1.5s ease-in 0s forwards,
+    RegionalFlag-overflow-unset 0.1s forwards 1.4s;
+}
+.animate_start .RegionalFlag-icon {
+    animation: RegionalFlag-icon-filter 1s ease-in-out 1.5s forwards;
+}
+.animate_start .RegionalFlag-name {
+    animation: RegionalFlag-name-display 0.5s ease-in 1.4s forwards;
+}
+
+
+@media all and (max-width: 1920px){
+    .TravelMap {
+        max-width: 900px;
+    }
+    .TelescopicSight{
+        width: 200px;
+        height: 200px;
+    }
+    .TravelMap-circle{
+        width: 225px;
+        height: 225px;
+    }
+    .TravelMap-circle-line{
+        width: 225px;
+        height: 225px;
+    }
+    .TravelMap-circle-ball{
+        width: 35px;
+        height: 35px;
+    }
+    .TravelMap-landmark{
+        width: 75px;
+    }
+    .RegionalFlag-block{
+        max-width: 200px;
+    }
+    .RegionalFlag-name p{
+        font-size: 22px;
+    }
+    .TravelMap-01-Della .TelescopicSight {
+        bottom: 6.5%;
+        left: 49%;
+    }
+    .TravelMap-06-Ruins .TelescopicSight {
+        top: 16%;
+        left: 41%;
+    }
+}
+
+@media all and (max-width: 1000px){
+    .RegionalBadge-icon-block{
+        max-width: 70px;
+        margin: 10px;
+    }
+    .RegionalBadge-name{
+        font-size: 20px;
+        bottom: -40px;
+    }
+    .TravelMap {
+        max-width: 600px;
+    }
+    .TelescopicSight{
+        width: 140px;
+        height: 140px;
+    }
+    .TravelMap-circle{
+        width: 160px;
+        height: 160px;
+    }
+    .TravelMap-circle-line{
+        width: 160px;
+        height: 160px;
+    }
+    .TravelMap-circle-ball{
+        width: 25px;
+        height: 25px;
+    }
+    .TravelMap-landmark{
+        width: 60px;
+    }
+    .RegionalFlag-block{
+        max-width: 150px;
+    }
+    .RegionalFlag-name p{
+        font-size: 18px;
+    }
+    .TravelMap-01-Della .TelescopicSight {
+        bottom: 6.5%;
+        left: 48%;
+    }
+    .TravelMap-06-Ruins .TelescopicSight {
+        top: 13%;
+        left: 40.5%;
+    }
+    .TravelMap-compass{
+        max-width: 90px;
+        height: 90px;
+        left: -2%;
+    }
+    #compass_outside{
+        width: 100%;
+    }
+    #compass_inside{
+        width: 51px
+    }
 }
