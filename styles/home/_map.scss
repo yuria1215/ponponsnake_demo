@@ -270,7 +270,7 @@
 
 /* 區域內容顯示 */
 .Area-display-block {
-    border: 1px solid red;
+    // border: 1px solid red;
 
     opacity: 0;
     // display: none;
@@ -442,7 +442,7 @@
 
 .RegionalFlag {
     /* border: 1px solid red; */
-    z-index: 0;
+    z-index: 10;
     position: relative;
     display: flex;
     align-items: center;
@@ -452,7 +452,7 @@
 .RegionalFlag::before {
     /* border: 1px solid rgb(187, 255, 0); */
     content: "";
-    background-image: url(/images/FrontPage/Travel/flagpole.png);
+    background-image: url('../image/flagpole.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 110%;
@@ -535,11 +535,12 @@
 
 /* 旗幟圖案 */
 .RegionalFlag-icon-block {
-    /* border: 1px solid rgb(187, 255, 0);  */
+    // border: 1px solid rgb(187, 255, 0);
     width: 90%;
     z-index: 10;
     margin: 15px 0px 3px;
     overflow: hidden;
+    position: relative;
 
     /* 控制 */
     max-height: 50px;
@@ -588,25 +589,42 @@
 
 /* 地區名稱 */
 .RegionalFlag-name {
-    width: 100%;
-    position: relative;
+    width: 140%;
+    // position: relative;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(100%, -50%);
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
 
     margin-top: 10px;
     opacity: 0;
+    z-index: -1;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400;
+    border: 1.5px solid #FFF7D7;
+    color: #FFF7D7;
+    font-size: 14px;
+    background-color: rgb(21 23 52 / 30%);
+    backdrop-filter: blur(5px);
+    box-shadow: 6px 6px 20px 0 rgba(0, 0, 0, 0.5);
+    background-color: #15173480;
+    padding: 20px 20px 20px 70px;
+    border-radius: 20px;
     z-index: -1;
 
     /* animation: RegionalFlag-name-display 0.5s ease-in 1.4s forwards; */
 }
 
-.RegionalFlag-name p {
-    position: absolute;
-    color: #FFF7D7;
-    font-size: 24px;
-    margin-bottom: 3px;
-}
+// .RegionalFlag-name p {
+//     position: absolute;
+//     color: #FFF7D7;
+//     font-size: 16px;
+//     margin-bottom: 3px;
+// }
 .RegionalFlag-name img{
     width: 100%;
 }
@@ -638,8 +656,8 @@
 }
 
 .TravelMap-01-Della .RegionalFlag-block {
-    top: 25%;
-    left: 15%;
+    top: 58%;
+    left: 26%;
 }
 
 .TravelMap-02-Potronis .TelescopicSight {
@@ -648,8 +666,8 @@
 }
 
 .TravelMap-02-Potronis .RegionalFlag-block {
-    top: 25%;
-    left: 15%;
+    top: 33%;
+    left: 37%;
 }
 
 .TravelMap-03-Nord .TelescopicSight {
@@ -658,8 +676,8 @@
 }
 
 .TravelMap-03-Nord .RegionalFlag-block {
-    top: 27%;
-    left: 66%;
+    top: 3%;
+    left: 56%;
 }
 
 .TravelMap-04-Chaoyang .TelescopicSight {
@@ -668,8 +686,8 @@
 }
 
 .TravelMap-04-Chaoyang .RegionalFlag-block {
-    top: 27%;
-    left: 60%;
+    top: 43%;
+    left: 46%;
 }
 
 .TravelMap-05-Faline .TelescopicSight {
@@ -678,8 +696,8 @@
 }
 
 .TravelMap-05-Faline .RegionalFlag-block {
-    top: 19%;
-    left: 50%;
+    top: 16%;
+    left: 37%;
 }
 
 .TravelMap-06-Ruins .TelescopicSight {
@@ -688,8 +706,8 @@
 }
 
 .TravelMap-06-Ruins .RegionalFlag-block {
-    top: 18%;
-    left: 11%;
+    top: 28%;
+    left: 20%;
 }
 
 
@@ -785,9 +803,9 @@
     .RegionalFlag-block{
         max-width: 200px;
     }
-    .RegionalFlag-name p{
-        font-size: 22px;
-    }
+    // .RegionalFlag-name p{
+    //     font-size: 12px;
+    // }
     // .TravelMap-01-Della .TelescopicSight {
     //     bottom: 6.5%;
     //     left: 49%;
@@ -832,8 +850,8 @@
     .RegionalFlag-block{
         max-width: 150px;
     }
-    .RegionalFlag-name p{
-        font-size: 18px;
+    .RegionalFlag-name{
+        font-size: 12px;
     }
     // .TravelMap-01-Della .TelescopicSight {
     //     bottom: 6.5%;
