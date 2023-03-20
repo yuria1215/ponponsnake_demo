@@ -253,7 +253,7 @@ export default function Token() {
         ]
     };
     useEffect(() => {
-        position =(rect.current.getBoundingClientRect().top - rect.current.getBoundingClientRect().height) 
+        position =(rect.current.getBoundingClientRect().top - rect.current.getBoundingClientRect().height) -200
         
         window.addEventListener("scroll", ()=>{
             if(window.scrollY > position){

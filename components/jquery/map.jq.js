@@ -6,6 +6,8 @@ function animateReset() {
     $('.TelescopicSight').removeClass('TelescopicSight-move')
     $('.RegionalBadge-name').css("opacity", "0");
     setTimeout(() => $('.map-area').addClass('animate_start'), 10)
+    
+    $('.RegionalBadge-icon' ).removeClass('RegionalBadge-icon-current');
 
     setTimeout(() => $('.Area-display-block ').css("opacity", "0"), 10000);
     setTimeout(() => $('.map-pick-block ').css("opacity", "1"), 10000)
@@ -50,10 +52,12 @@ export default function telescopicSightMove() {
 
         $('.Area-display-block ').css("opacity", "1")
         $('.map-pick-block ').css("opacity", "0")
+        $('.Circle-Click-Icon ').css("opacity", "0")
 
 
         travelMapMove(num)
         $(this).siblings('.RegionalBadge-name').css("opacity", "1");
+        $(this).addClass('RegionalBadge-icon-current');
     })
 }
 
