@@ -14,7 +14,7 @@ function animateReset() {
     });
     window.saveMapTimeOut= []
     var timeout1 = setTimeout(() => $('.Area-display-block ').css("opacity", "0"), 10000);
-    var timeout2 = setTimeout(() => $('.map-pick-block ').css("opacity", "1"), 10000)
+    var timeout2 = setTimeout(() => $('.map-pick-block ').css("opacity", "1"), 10000);
     window.saveMapTimeOut.push(timeout1,timeout2)
     
 }
