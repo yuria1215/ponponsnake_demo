@@ -6,10 +6,16 @@ function animateReset() {
     $('.TelescopicSight').removeClass('TelescopicSight-move')
     $('.RegionalBadge-name').css("opacity", "0");
     setTimeout(() => $('.map-area').addClass('animate_start'), 10)
-
-    setTimeout(() => $('.Area-display-block ').css("opacity", "0"), 10000);
-    setTimeout(() => $('.map-pick-block ').css("opacity", "1"), 10000)
-
+    // clearTimeout(timeout1);
+    // clearTimeout(timeout2);
+    window.saveMapTimeOut.map(element => {   
+        clearTimeout(element)
+    });
+    window.saveMapTimeOut= []
+    var timeout1 = setTimeout(() => $('.Area-display-block ').css("opacity", "0"), 10000);
+    var timeout2 = setTimeout(() => $('.map-pick-block ').css("opacity", "1"), 10000)
+    window.saveMapTimeOut.push(timeout1,timeout2)
+    
 }
 
 function travelMapMove(num) {
@@ -44,6 +50,8 @@ function travelMapMove(num) {
 
 export default function telescopicSightMove() {
     //  TravelMapAll()  
+    window.saveMapTimeOut= []
+    console.log(window.saveMapTimeOut)
     $('.RegionalBadge-icon-block img').on('click', function () {
         const id = $(this).attr('id')
         const num = id.slice(id.length - 1)

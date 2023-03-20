@@ -35,7 +35,7 @@ export default function Arena() {
     naughtyElfPosition = arenaEventsArea.current.getBoundingClientRect().top + 100
     chickenEggPosition = arenaEventsArea.current.getBoundingClientRect().top +arenaEventsArea.current.getBoundingClientRect().height -200
     window.addEventListener("scroll",()=>{
-      console.log(window.scrollY+window.innerHeight,naughtyElfPosition ,chickenEggPosition)
+     
       if(window.scrollY+window.innerHeight >naughtyElfPosition){        
         setNaughtyElfAnimate("naughty-elf-animate")
       }
