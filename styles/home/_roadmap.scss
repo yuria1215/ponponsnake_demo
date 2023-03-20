@@ -13,6 +13,7 @@ main{
 .roadmap-wave{
     width: 100%;
     overflow: hidden;
+    pointer-events: none;
 
     @include rwd-max(1500px) {
         font-size: 16px;

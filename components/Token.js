@@ -5,6 +5,10 @@ import echarts from 'echarts';
 
 export default function Token() {
 
+    // const rect = $('#token-chart')[0].getBoundingClientRect()
+    //     //控制圓餅出現頁面高度 ex: (...) - 100
+    //     position = (rect.top - rect.height) - 200
+
     const option = {
 
         series: [
@@ -32,7 +36,7 @@ export default function Token() {
                 //   },
 
                 label: {
-                    fontSize: 15,
+                    fontSize: 13,
                     lineHeight: 18,
                     color: '#ffffff',
                     // overflow: "break"
@@ -63,23 +67,23 @@ export default function Token() {
 
                 data: [
                     // DAO Treasury
-                    { value: 45, name: "label_01" },
+                    { value: 45, name: "DAO Treasury" },
                     // CQI Team
-                    { value: 16, name: "label_02" },
+                    { value: 16, name: "CQI Team" },
                     // Event
-                    { value: 2, name: "label_03" },
+                    { value: 2, name: "Event" },
                     // Develop
-                    { value: 8, name: "label_04" },
+                    { value: 8, name: "Develop" },
                     // Advisor
-                    { value: 4, name: "label_05" },
+                    { value: 4, name: "Advisor" },
                     // Public Sale
-                    { value: 4, name: "label_06" },
+                    { value: 4, name: "Public Sale" },
                     // Private Placement 
-                    { value: 12, name: "label_07" },
+                    { value: 12, name: "Private Placement " },
                     // Seed(0.06USD)
-                    { value: 6, name: "label_08" },
+                    { value: 6, name: "Seed(0.06USD)" },
                     // Charity
-                    { value: 3, name: "label_09" }
+                    { value: 3, name: "Charity" }
                 ],
 
             },
@@ -108,7 +112,7 @@ export default function Token() {
                 emphasis: {
                     label: {
                         show: true,
-                        fontSize: '44',
+                        fontSize: '30',
                         fontWeight: 'bold'
                     },
                     itemStyle: {
@@ -128,6 +132,19 @@ export default function Token() {
                         },
                     },
                 },
+                color: [
+                    '#EAC2FE',
+                    '#F8B0E5',
+                    '#F8B0F6',
+                    '#EAB0F8',
+                    '#DEB0F8',
+                    '#C5B0F8',
+                    '#B0B3F8',
+                    '#B0C3F8',
+                    '#B7D1FF'
+                  ],
+
+
                 // color: [
 
                 //     // // DAO Treasury 45%
@@ -261,14 +278,14 @@ export default function Token() {
                     <div className="token-right">
                         <img id="ernc-people" src={`${process.env.BASE_PATH}/images/token/ernc-people.png`} alt="" />
 
-                        <div className="token-chart">
+                        <div className="token-chart" id="token-chart">
 
-                        {/* <img src={`${process.env.BASE_PATH}/images/token/chart.png`} alt="" /> */}
+                            {/* <img src={`${process.env.BASE_PATH}/images/token/chart.png`} alt="" /> */}
                             <div className="Pie-Chart" id="Pie-Chart">
-                            <ReactEcharts
-                                echarts={echarts}
-                                option={option}
-                                style={{ height: '400px', width: '100%' }}
+                                <ReactEcharts
+                                    echarts={echarts}
+                                    option={option}
+                                    style={{ height: '400px', width: '100%' }}
                                 />
                             </div>
                         </div>
