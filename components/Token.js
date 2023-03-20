@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import { useEffect,useRef  ,useState} from "react";
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts';
 
 
 export default function Token() {
-
+    const rect = useRef(null);
+    let position ;
     // const rect = $('#token-chart')[0].getBoundingClientRect()
     //     //控制圓餅出現頁面高度 ex: (...) - 100
     //     position = (rect.top - rect.height) - 200
-
+    const [ReactEchartsShow, setReactEchartsShow]  = useState(false)
     const option = {
 
         series: [
@@ -253,12 +254,16 @@ export default function Token() {
             }
         ]
     };
-    // useEffect(() => {
-    //     const hasJQuery = Boolean(window.jQuery)
-    //     if (hasJQuery) {
-    //         chartInit()
-    //     }
-    // }, []);
+    useEffect(() => {
+        position =(rect.current.getBoundingClientRect().top - rect.current.getBoundingClientRect().height) - 200
+        
+        window.addEventListener("scroll", ()=>{
+            if(window.scrollY > position){
+                setReactEchartsShow(true)
+            }
+            
+        })
+    }, []);
     return (
         <section className="token-area">
 
@@ -281,12 +286,15 @@ export default function Token() {
                         <div className="token-chart" id="token-chart">
 
                             {/* <img src={`${process.env.BASE_PATH}/images/token/chart.png`} alt="" /> */}
-                            <div className="Pie-Chart" id="Pie-Chart">
+                            <div className="Pie-Chart" id="Pie-Chart" ref={rect} >
+                                {ReactEchartsShow &&(
                                 <ReactEcharts
                                     echarts={echarts}
                                     option={option}
                                     style={{ height: '400px', width: '100%' }}
                                 />
+                                )}
+                                
                             </div>
                         </div>
                     </div>
