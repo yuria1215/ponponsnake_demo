@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import telescopicSightMove from './jquery/map.jq'
 
 export default function Map() {
-        useEffect(() => {
+    useEffect(() => {
         const hasJQuery = Boolean(window.jQuery)
         if (hasJQuery) {
             telescopicSightMove()
@@ -58,6 +58,10 @@ export default function Map() {
                         <img className="RegionalBadge-icon" id="RegionalBadge-06"
                             src={`${process.env.BASE_PATH}/images/map/RegionalBadge-06.png`} alt="" />
                         <div className="RegionalBadge-name">Ruins</div>
+                    </div>
+
+                    <div className="Circle-Click-Icon">
+                        <img src={`${process.env.BASE_PATH}/images/market/click-icon.png`} alt="" />
                     </div>
                 </div>
             </div>
@@ -155,7 +159,7 @@ export default function Map() {
 
                 </div>
 
-                
+
 
                 {/* @* 區域內容顯示 *@ */}
                 <div className="Area-display-block ">
@@ -180,7 +184,7 @@ export default function Map() {
                         </div>
                         {/* @* 地標 *@ */}
                         <div className="TravelMap-landmark">
-                            <img className="TravelMap-landmark-icon" src={`${process.env.BASE_PATH}/images/map/landmark-01.png`} alt=""/>
+                            <img className="TravelMap-landmark-icon" src={`${process.env.BASE_PATH}/images/map/landmark-01.png`} alt="" />
                         </div>
                     </div>
 
@@ -189,12 +193,12 @@ export default function Map() {
                         <div className="RegionalFlag">
                             <div className="RegionalFlag-BG"></div>
                             <div className="RegionalFlag-icon-block">
-                                <img className="RegionalFlag-icon" src={`${process.env.BASE_PATH}/images/map/knight_icon_01.png`} alt=""/>
+                                <img className="RegionalFlag-icon" src={`${process.env.BASE_PATH}/images/map/knight_icon_01.png`} alt="" />
                             </div>
                         </div>
                         <div className="RegionalFlag-name">
                             {/* <p>Della</p> */}
-                            
+
                             {/* <img src={`${process.env.BASE_PATH}/images/map/RegionalFlag-title-BG.png" alt=""/> */}
                         </div>
                         <div className="RegionalFlag-info"></div>

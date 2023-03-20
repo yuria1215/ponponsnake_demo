@@ -58,10 +58,12 @@ export default function telescopicSightMove() {
 
         $('.Area-display-block ').css("opacity", "1")
         $('.map-pick-block ').css("opacity", "0")
+        $('.Circle-Click-Icon ').css("opacity", "0")
 
 
         travelMapMove(num)
         $(this).siblings('.RegionalBadge-name').css("opacity", "1");
+        $(this).addClass('RegionalBadge-icon-current');
     })
 }
 
