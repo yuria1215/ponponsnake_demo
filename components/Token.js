@@ -322,7 +322,7 @@ export default function Token() {
                             </div>
 
 
-                            <div className="token-text">ERNC is the primary market token for PonPonSnake MetaVerse. It is an ERC20 token that allows its holders to take part in game rewards decisions. ERNC can be obtained through staking, trading, competitions, and more.</div>
+                            <div className="token-text">ERNC is the primary market token for PonPonSnake Metaverse. It is an ERC20 token that allows its holders to take part in game rewards decisions. ERNC can be obtained through staking, trading, competitions, and more.</div>
                         </div>
 
                     </div>
