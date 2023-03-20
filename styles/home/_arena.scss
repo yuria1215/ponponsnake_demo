@@ -40,12 +40,16 @@
     position: absolute;
     // left: 5%;
     // bottom: 5%;
-    // left: -0%;
+     left: -50%;
     // bottom: 45%;
     z-index: -1;
     max-width: 444px;
     width: 35%;
     filter: drop-shadow(3px 12px 10px rgba(0, 0, 0, 0.27));
+
+}
+
+.chicken-egg-animate{
     animation: chicken-egg-in 2s ease-in-out 0s forwards,
     chicken-egg-shake 4s linear 2s infinite;
 }
@@ -97,6 +101,10 @@
     max-width: 227px;
     width: 25%;
     filter: drop-shadow(3px 12px 10px rgba(0, 0, 0, 0.27));
+
+}
+
+.naughty-elf-animate{
     animation: naughty-elf-in 2s ease-in 0s forwards,
     naughty-elf-shake 4s linear 2s infinite;
 }
