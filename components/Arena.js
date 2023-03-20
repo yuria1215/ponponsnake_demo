@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef  ,useEffect, useState} from "react";
 
 export default function Arena() {
   const carouselRefs = useRef([]);
@@ -22,12 +22,35 @@ export default function Arena() {
       else img.src = ifNullSrc
     });
   };
+  const arenaEventsArea = useRef()
+  //幽靈  
+  let naughtyElfPosition ;
+  const [naughtyElfAnimate ,setNaughtyElfAnimate] =useState("")
+  //雞 
+  let chickenEggPosition ;
+  const [chickenEggAnimate ,setchickenEggAnimate] =useState("")
+
+
+  useEffect(()=>{
+    naughtyElfPosition = arenaEventsArea.current.getBoundingClientRect().top + 100
+    chickenEggPosition = arenaEventsArea.current.getBoundingClientRect().top +arenaEventsArea.current.getBoundingClientRect().height -200
+    window.addEventListener("scroll",()=>{
+      console.log(window.scrollY+window.innerHeight,naughtyElfPosition ,chickenEggPosition)
+      if(window.scrollY+window.innerHeight >naughtyElfPosition){        
+        setNaughtyElfAnimate("naughty-elf-animate")
+      }
+
+      if(window.scrollY+window.innerHeight >chickenEggPosition){        
+        setchickenEggAnimate("chicken-egg-animate")
+      }
+    })
+  },[])
   
   return (
-    <section className="arena-events-area">
+    <section className="arena-events-area" ref={arenaEventsArea}>
       <div className="arena-background-line"></div>
-      <img id="chicken-egg" src={`${process.env.BASE_PATH}/images/arena/chicken-egg.png`} alt="" />
-      <img id="naughty-elf" src={`${process.env.BASE_PATH}/images/arena/naughty-elf.png`} alt="" />
+      <img id="chicken-egg" className={`${chickenEggAnimate}`} src={`${process.env.BASE_PATH}/images/arena/chicken-egg.png`} alt="" />
+      <img id="naughty-elf" className={`${naughtyElfAnimate}`} src={`${process.env.BASE_PATH}/images/arena/naughty-elf.png`} alt=""  />
 
       <div className="main-content" id="main-content-arena">
         <div className="index-title-block">

@@ -6,9 +6,7 @@ import echarts from 'echarts';
 export default function Token() {
     const rect = useRef(null);
     let position ;
-    // const rect = $('#token-chart')[0].getBoundingClientRect()
-    //     //控制圓餅出現頁面高度 ex: (...) - 100
-    //     position = (rect.top - rect.height) - 200
+
     const [ReactEchartsShow, setReactEchartsShow]  = useState(false)
     const option = {
 
@@ -255,7 +253,7 @@ export default function Token() {
         ]
     };
     useEffect(() => {
-        position =(rect.current.getBoundingClientRect().top - rect.current.getBoundingClientRect().height) - 200
+        position =(rect.current.getBoundingClientRect().top - rect.current.getBoundingClientRect().height) 
         
         window.addEventListener("scroll", ()=>{
             if(window.scrollY > position){
