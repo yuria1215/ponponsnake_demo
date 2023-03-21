@@ -8,6 +8,10 @@
     background-size: cover;
     position: relative;
     z-index: 0;
+
+       @include rwd-max(600px) {
+        min-height: unset;
+       }
 }
 
 .arena-background-line {
