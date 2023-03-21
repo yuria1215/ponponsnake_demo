@@ -9,9 +9,9 @@
     position: relative;
     z-index: 0;
 
-       @include rwd-max(600px) {
+    @include rwd-max(600px) {
         min-height: unset;
-       }
+    }
 }
 
 .arena-background-line {
@@ -45,7 +45,7 @@
     position: absolute;
     // left: 5%;
     // bottom: 5%;
-     left: -50%;
+    left: -50%;
     // bottom: 45%;
     z-index: -1;
     max-width: 444px;
@@ -58,10 +58,11 @@
 
 }
 
-.chicken-egg-animate{
+.chicken-egg-animate {
     animation: chicken-egg-in 2s ease-in-out 0s forwards,
-    chicken-egg-shake 4s linear 2s infinite;
+        chicken-egg-shake 4s linear 2s infinite;
 }
+
 @keyframes chicken-egg-in {
     0% {
         left: -20%;
@@ -75,14 +76,15 @@
         transform: scale(1);
     }
 }
-@media all and (max-width: 600px){
+
+@media all and (max-width: 600px) {
     @keyframes chicken-egg-in {
         0% {
             left: -20%;
             bottom: 10%;
             transform: scale(0.7);
         }
-    
+
         100% {
             left: 3.5%;
             bottom: 2%;
@@ -129,9 +131,9 @@
 
 }
 
-.naughty-elf-animate{
+.naughty-elf-animate {
     animation: naughty-elf-in 2s ease-in 0s forwards,
-    naughty-elf-shake 4s linear 2s infinite;
+        naughty-elf-shake 4s linear 2s infinite;
 }
 
 @keyframes naughty-elf-in {
@@ -140,14 +142,17 @@
         top: -8%;
         transform: scale(0.7);
     }
+
     30% {
         right: 1%;
         top: -4%;
     }
+
     60% {
         right: 0%;
         top: 0%;
     }
+
     100% {
         right: 5%;
         top: 5%;
@@ -175,52 +180,59 @@
         right: 5.5%;
         top: 7%;
     }
+
     100% {
         right: 5%;
         top: 5%;
     }
 }
-@media all and (max-width: 600px){
+
+@media all and (max-width: 600px) {
     @keyframes naughty-elf-in {
         0% {
             right: -5%;
             top: -8%;
             transform: scale(0.7);
         }
+
         30% {
             right: 1%;
             top: -4%;
         }
+
         60% {
             right: 0%;
             top: 0%;
         }
+
         100% {
             right: 2%;
             top: 0.5%;
             transform: scale(1);
         }
     }
+
     @keyframes naughty-elf-shake {
         0% {
             right: 2%;
             top: 0.5%;
         }
-    
+
         25% {
             right: 2.5%;
             top: 2.5%;
         }
-    
+
         50% {
             right: 3%;
             top: 0.5%;
         }
-    
+
         75% {
             right: 2.5%;
             top: 2.5%;
         }
+
         100% {
             right: 2%;
             top: 0.5%;
@@ -257,13 +269,14 @@
     overflow: hidden;
     border-radius: 10px;
 
-    @include rwd-max(1500px){
+    @include rwd-max(1500px) {
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
+
     @include rwd-max(1000px) {
         display: none;
-        
+
     }
 }
 
@@ -391,6 +404,19 @@
     box-shadow: 8px 9px 20px 0 rgba(0, 0, 0, 0.95);
     border: solid 4px var(--lavender);
     background-image: linear-gradient(147deg, rgba(68, 82, 120, 0.3) 0%, rgb(43, 58, 96) 27%, #59678b 48%, #2b3c67 70%, rgba(23, 31, 52, 0.3) 99%);
+
+    @include rwd-max(1920px) {
+        max-width: 350px;
+        height: 473px;
+        padding: 28px 28px 23px 28px;
+    }
+
+    @include rwd-max(600px){
+        height: 485px;
+    }
+
+
+
 }
 
 .arena-card-title-center {
@@ -398,6 +424,17 @@
     color: var(--light-lavender);
     margin-bottom: 8px;
     line-height: 1.5;
+
+    @include rwd-max(1920px) {
+        font-size: 22px;
+        margin-bottom: 4px;
+        line-height: 1.4;
+    }
+
+
+    @include rwd-max(600px) {
+        font-size: 20px;
+    }
 }
 
 .arena-card-info-center {
@@ -453,7 +490,7 @@
     right: 18%;
     bottom: 0%;
 
-        @include rwd-max(1000px) {
+    @include rwd-max(1000px) {
         display: none;
     }
 }
@@ -477,7 +514,7 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.arrow-svg{
+.arrow-svg {
     width: 7.925px;
 }
 
@@ -487,11 +524,6 @@
         // margin-top: -60px;
     }
 
-    .arena-card-center {
-        max-width: 350px;
-        height: 473px;
-        padding: 28px 28px 23px 28px;
-    }
 
     @keyframes acl {
         0% {
@@ -512,11 +544,7 @@
         margin-bottom: 20px;
     }
 
-    .arena-card-title-center {
-        font-size: 22px;
-        margin-bottom: 4px;
-        line-height: 1.4;
-    }
+
 
     .arena-card-poster {
         width: 210px;
@@ -536,21 +564,25 @@
         width: 35px;
         height: 35px;
     }
-    .arrow-svg{
+
+    .arrow-svg {
         width: 6px;
     }
-    
+
 }
-@media (max-width: 1000px){
+
+@media (max-width: 1000px) {
     .arena-carousel {
 
         margin-top: 60px;
     }
+
     .arena-events-area {
         height: unset;
         background-size: contain;
     }
 }
+
 @media (max-width: 400px) {
     .arena-events-area {
         height: unset;
