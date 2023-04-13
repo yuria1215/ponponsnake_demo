@@ -1,11 +1,11 @@
 /* share */
 
-.index-button{
+.index-button {
     max-width: 180px;
     width: 100%;
     display: inline-block;
     border-radius: 48px;
-    background: linear-gradient(to bottom, #FFEC8F 0%, #FFAA00 100% );
+    background: linear-gradient(to bottom, #FFEC8F 0%, #FFAA00 100%);
     background-size: 100% 100%;
     border: 3px solid #FFD560;
     outline: none;
@@ -28,27 +28,28 @@
     }
 }
 
-.index-button:hover{
+.index-button:hover {
     background: linear-gradient(to bottom, #FFEC8F 0%, #ff9400 100%);
     /* background-size: 100% 1000%; */
     background-position: bottom;
 }
 
-@media (max-width: 1200px){
-    .index-button{
+@media (max-width: 1200px) {
+    .index-button {
         font-size: 16px;
         /* padding: 10px 40px; */
     }
 }
-@media (max-width: 400px){
-    .index-button{
+
+@media (max-width: 400px) {
+    .index-button {
         font-size: 16px;
         /* padding: 8px 36px; */
     }
 
 }
 
-.main-content{
+.main-content {
     // border: 1px solid red;
     max-width: 1400px;
     width: 90%;
@@ -65,22 +66,26 @@
 //     /* max-width: 700px; */
 // }
 
-.index-main-title{
+.index-main-title {
     color: var(--white);
     font-size: 48px;
     font-weight: 500;
     margin-bottom: 14px;
-    
+    line-height: 1.4;
+
     @include rwd-max(1920px) {
         font-size: 42px;
     }
+
     @include rwd-max(1200px) {
         font-size: 30px;
     }
-
+    @include rwd-max(600px) {
+        font-size: 26px;
+    }
 }
 
-.index-subtitle{
+.index-subtitle {
     color: var(--pink-purple);
     font-size: 20px;
     font-weight: 300;
@@ -90,8 +95,15 @@
     @include rwd-max(1920px) {
         font-size: 16px;
     }
+
     @include rwd-max(1200px) {
         font-size: 14px;
     }
 }
 
+.bottom-area {
+    // background-image: url(/_next/static/media/join-BG.a116b828.png);
+    background-image: url('../image/join-BG.png');
+    background-size: cover;
+    width: 100%;
+}

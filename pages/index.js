@@ -10,7 +10,7 @@ import Roadmap from '@/components/Roadmap';
 import Join from '@/components/Join';
 
 export default function Home() {
-  const basePath =  process.env.BASE_PATH
+  const basePath = process.env.BASE_PATH
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function Home() {
         ></script>
       </Head>
 
-      <main style={{'--url': 'aaa'}}>
+      <main style={{ '--url': 'aaa' }}>
         <Header />
         <Banner />
         <Arena />
@@ -37,8 +37,10 @@ export default function Home() {
         <Map />
         <Token />
         <Roadmap />
-        <Join />
-        <Footer />
+        <div className="bottom-area">
+          <Join />
+          <Footer />
+        </div>
       </main>
     </>
   );
