@@ -4,7 +4,7 @@ export default function Join() {
             <div className="main-content" id="main-content-join">
 
                 <div className="index-title-block">
-                    <div className="index-main-title">Explore PonPonSnake Metaverse</div>
+                    <div className="index-main-title">Join Our Metaverse</div>
                     <div className="index-subtitle">Play it, Buy it, Create more FUN!
                         Promote your NFT creations or brands in the PonPonSnake Universe.</div>
                     <a href="" className="index-button">
