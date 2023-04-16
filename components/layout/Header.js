@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from 'next/router'
 
 export default function Header() {
+  const router = useRouter()
   const [hamShow, setHamShow] = useState(false);
   const [headerHide, setHeaderHide] = useState(false);
-
   const hamHandler = () => setHamShow(!hamShow);
   let lastScrollTop = 0;
 
@@ -75,22 +77,38 @@ export default function Header() {
         </div>
 
         <ul className="nav-list">
-          <li className="nav-item current">Home</li>
-          <li className="nav-item">Market</li>
-          <li className="nav-item">Arena</li>
-          <li className="nav-item">News</li>
-          <li className="nav-item">More</li>
+          <li className={`nav-item ${router.pathname == '/' ? 'current' : ''}`}>
+            <Link href="/">Home</Link>
+          </li>
+          <li className={`nav-item ${router.pathname == '/market' ? 'current' : ''}`}>
+            <Link href="/market">Market</Link>
+          </li>
+          <li className="nav-item">
+            <Link href="#">Arena</Link>
+          </li>
+          <li className="nav-item">
+            <Link href="#">News</Link>
+          </li>
+          <li className="nav-item">
+            <Link href="#">More</Link>
+          </li>
         </ul>
 
         <div className="top-end">
           <div className="coin-warp">
             <div className="flex-center src">
-              <img src={`${process.env.BASE_PATH}/images/nav/SRC.png`} alt="src icon" />
+              <img
+                src={`${process.env.BASE_PATH}/images/nav/SRC.png`}
+                alt="src icon"
+              />
               0.00
             </div>
 
             <div className="flex-center jem">
-              <img src={`${process.env.BASE_PATH}/images/nav/GEM.png`} alt="gem icon" />
+              <img
+                src={`${process.env.BASE_PATH}/images/nav/GEM.png`}
+                alt="gem icon"
+              />
               0.00
             </div>
           </div>
