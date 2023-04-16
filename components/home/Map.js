@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import telescopicSightMove from './jquery/map.jq'
+import telescopicSightMove from '../jquery/map.jq'
 
 export default function Map() {
     useEffect(() => {

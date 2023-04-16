@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import MarketJquery from './jquery/market.jq.js'
+import MarketJquery from '../jquery/market.jq.js'
 
 export default function Market() {
     useEffect(() => {
