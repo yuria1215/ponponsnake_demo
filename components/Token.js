@@ -1,6 +1,5 @@
 import { useEffect,useRef  ,useState} from "react";
 import ReactEcharts from 'echarts-for-react';
-import echarts from 'echarts';
 
 
 export default function Token() {
