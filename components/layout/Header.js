@@ -77,10 +77,10 @@ export default function Header() {
         </div>
 
         <ul className="nav-list">
-          <li className={`nav-item ${router.pathname == '/' ? 'current' : ''}`}>
+          <li className={`nav-item ${router.pathname === '/' ? 'current' : ''}`}>
             <Link href="/">Home</Link>
           </li>
-          <li className={`nav-item ${router.pathname == '/market' ? 'current' : ''}`}>
+          <li className={`nav-item ${router.pathname === '/market' ? 'current' : ''}`}>
             <Link href="/market">Market</Link>
           </li>
           <li className="nav-item">
