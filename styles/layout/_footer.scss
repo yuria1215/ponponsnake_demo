@@ -1,5 +1,6 @@
 footer.layout {
-  --bg-color: #18183fa6;
+  // --bg-color: #18183fa6;
+  --bg-color: #18183F;
   --bg-license-color: #3b4195;
   --font-color: var(--white);
   --title-font-color: var(--pink-purple);
@@ -169,6 +170,7 @@ footer.layout {
     text-align: center;
     line-height: 1.3;
     // background-color: var(--bg-license-color);
+    background: linear-gradient(to right,#292c64 0%,#363983 50%,#292c64 100%);
     padding: 20px;
     font-size: 14px;
 
