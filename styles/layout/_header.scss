@@ -9,6 +9,7 @@ header.top {
   --nav-padding-left: 0px;
   --nav-item-margin-right: 0px;
   --top-end-space: 0px;
+  --top-end-space-nav-end: 0px;
   --rwd-display: block;
   --transition-time: 0.15s;
   --transition-eases: ease-out;
@@ -28,6 +29,7 @@ header.top {
     --nav-padding-left: 2em;
     --nav-item-margin-right: 1.5em;
     --top-end-space: 1.5em;
+    --top-end-space-nav-end: 1em;
     --rwd-display: flex;
 
     &.hide {
@@ -39,12 +41,14 @@ header.top {
     --nav-padding-left: 3em;
     --nav-item-margin-right: 2em;
     --top-end-space: 1.5em;
+    --top-end-space-nav-end: 1em;
   }
 
   @include rwd(1200px) {
     --nav-padding-left: 3.5em;
     --nav-item-margin-right: 2.5em;
     --top-end-space: 2.5em;
+    --top-end-space-nav-end: 2em;
     padding: 0px 20px 0 30px;
     height: 80px;
   }
@@ -60,6 +64,7 @@ header.top {
 
   .ham {
     cursor: pointer;
+
     @include rwd(850px) {
       display: none;
     }
@@ -109,21 +114,30 @@ header.top {
       position: relative;
 
       a {
-        color: white;
+        color: var(--white);
       }
-      
-      &:hover a, &.current a {
+
+      &:hover a,
+      &.current a {
         color: var(--pink-purple);
       }
 
+      .nav-arrow {
+        fill: var(--white);
+      }
+
+      &:hover a .nav-arrow {
+        fill: var(--pink-purple);
+      }
+
       &.current::before,
-      &:not(.current):hover::before  {
+      &:not(.current):hover::before {
         position: absolute;
         content: "";
         width: 13px;
         aspect-ratio: 1/1;
         top: 50%;
-        left:0;
+        left: 0;
         transform: translate(-150%, -50%);
         background-image: var(--snake-svg-url);
         background-repeat: no-repeat;
@@ -144,8 +158,8 @@ header.top {
       line-height: var(--line-height);
       display: var(--rwd-display);
 
-      > * {
-        margin-right: var(--top-end-space);
+      >* {
+        margin-right: var(--top-end-space-nav-end);
       }
 
       & img {
@@ -155,7 +169,13 @@ header.top {
 
     .locales {
       line-height: var(--line-height);
-      margin-right: var(--top-end-space);
+      margin-right: var(--top-end-space-nav-end);
+      height: 50px;
+      cursor: pointer;
+
+      @include rwd(850px) {
+        height: unset;
+      }
     }
 
     .index-button {
