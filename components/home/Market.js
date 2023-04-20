@@ -178,8 +178,8 @@ export default function Market() {
                             <div className="product-content">
 
                                 <div className="attributes">
-                                    <span>Epic</span>
                                     <img src={`${process.env.BASE_PATH}/images/market/ElementsIcon-Water.png`} alt="" />
+                                    <span>Epic</span>
                                 </div>
                                 <img className="product-icon" id="product-icon-01" src={`${process.env.BASE_PATH}/images/market/product-01.png`} alt="" />
 
@@ -222,8 +222,8 @@ export default function Market() {
                             <div className="product-content">
 
                                 <div className="attributes" id="attributes-fire">
-                                    <span>Excellent</span>
                                     <img src={`${process.env.BASE_PATH}/images/market/ElementsIcon-Fire.png`} alt="" />
+                                    <span>Excellent</span>
                                 </div>
                                 <img className="product-icon" id="product-icon-02" src={`${process.env.BASE_PATH}/images/market/product-02.png`} alt="" />
 
@@ -264,8 +264,8 @@ export default function Market() {
                             <div className="product-content">
 
                                 <div className="attributes">
-                                    <span>Epic</span>
                                     <img src={`${process.env.BASE_PATH}/images/market/ElementsIcon-Earth.png`} alt="" />
+                                    <span>Epic</span>
                                 </div>
                                 <img className="product-icon" id="product-icon-03" src={`${process.env.BASE_PATH}/images/market/product-03.png`} alt="" />
 
