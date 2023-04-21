@@ -51,7 +51,7 @@ export default function Header() {
         </svg>
       </div>
 
-      <nav className={`${hamShow ? "show" : ""}`}>
+      <nav className={`mobileNav ${hamShow ? "show" : ""}`}>
         <div className="mobile-wrap d-flex">
           <div className="logo">
             <img
