@@ -78,7 +78,7 @@ header.top {
     left: 0;
     text-align: center;
     background-color: rgba(var(--header-bg-rgb-color), 0.9);
-    transition: transform var(--transition-time) var(--transition-eases);
+    // transition: transform var(--transition-time) var(--transition-eases);
     transform: translateX(-100%);
 
     
@@ -90,12 +90,13 @@ header.top {
       justify-content: space-between;
       background-color: unset;
       transform: unset;
-      transform: translateX(0%);
+      transition: transform var(--transition-time) var(--transition-eases);
 
     }
     
     &.show {
       transform: translateX(0%);
+      transition: transform var(--transition-time) var(--transition-eases);
     }
 
     
