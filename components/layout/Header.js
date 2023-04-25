@@ -6,7 +6,18 @@ export default function Header() {
   const router = useRouter()
   const [hamShow, setHamShow] = useState(false);
   const [headerHide, setHeaderHide] = useState(false);
-  const hamHandler = () => setHamShow(!hamShow);
+  const hamHandler = () => {
+    setHamShow(!hamShow);
+    setDropdownShow(false);
+  }
+  const [dropdownShow, setDropdownShow] = useState(false);
+  const toggleDropdown = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 850) {
+      setDropdownShow(!dropdownShow);
+    }
+  }
+
   let lastScrollTop = 0;
 
   useEffect(() => {
@@ -19,8 +30,23 @@ export default function Header() {
       }
       lastScrollTop = scrollY;
     }
+
+    function handleResize() {
+      // 在這裡改變dropdownShow的狀態為false
+      const screenWidth = window.innerWidth;
+      if (screenWidth > 850) {
+        setDropdownShow(false);
+      }
+    }
+
     window.addEventListener("scroll", headerShow);
-    return () => window.removeEventListener("scroll", headerShow);
+    window.addEventListener("resize", handleResize); // 加入resize事件監聽
+
+    return () => {
+      window.removeEventListener("scroll", headerShow);
+      window.removeEventListener("resize", handleResize); // 移除resize事件監聽
+    }
+
   }, []);
 
   return (
@@ -90,15 +116,35 @@ export default function Header() {
             <Link href="#">News</Link>
           </li>
           <li className="nav-item">
-            <Link href="#">
+            <Link href="#" onClick={toggleDropdown}>
               <div className="  " style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 More
                 <svg className="nav-arrow" style={{ marginLeft: '5px', alignItems: 'center' }} xmlns="http://www.w3.org/2000/svg" width="6.626" height="4.142" viewBox="0 0 6.626 4.142">
                   <path id="arrow-down" d="M547.084,44.916l2.484,2.485,2.485-2.485.828.828-3.313,3.314-3.313-3.314Z" transform="translate(-546.255 -44.916)" fill="" fillRule="evenodd" />
                 </svg>
               </div>
-
             </Link>
+
+            {/* {dropdownShow && ( */}
+            <div className={`dropdown ${dropdownShow ? "dropdownShow" : ""}`}>
+              <div className="dropdown-link">
+                <Link href="#">Battle</Link>
+              </div>
+              <div className="dropdown-link">
+                <Link href="#">Token</Link>
+              </div>
+              <div className="dropdown-link">
+                <Link href="#">Getting Started</Link>
+              </div>
+              <div className="dropdown-link">
+                <Link href="#">Whitepaper</Link>
+              </div>
+              <div className="dropdown-link">
+                <Link href="#">Cooperation</Link>
+              </div>
+            </div>
+            {/* )} */}
+
           </li>
         </ul>
 
