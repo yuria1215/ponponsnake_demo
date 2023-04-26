@@ -8,13 +8,29 @@ export default function Header() {
   const [headerHide, setHeaderHide] = useState(false);
   const hamHandler = () => {
     setHamShow(!hamShow);
-    setDropdownShow(false);
+    setDropdownShow([false, false]);
   }
-  const [dropdownShow, setDropdownShow] = useState(false);
-  const toggleDropdown = () => {
+  const [dropdownShow, setDropdownShow] = useState([false, false]);
+  // console.log(dropdownShow)
+
+
+
+  const toggleDropdown = (index) => {
     const screenWidth = window.innerWidth;
     if (screenWidth < 850) {
-      setDropdownShow(!dropdownShow);
+      // setDropdownShow(!dropdownShow);
+      setDropdownShow((prevState) => {
+        // console.log(prevState)
+        let newState = [...prevState];
+        newState.map((e, i) => {
+          if (i != index) {
+            newState[i] = false
+          }
+        })
+        newState[index] = !newState[index];
+        return [...newState];
+      })
+
     }
   }
 
@@ -35,7 +51,7 @@ export default function Header() {
       // 在這裡改變dropdownShow的狀態為false
       const screenWidth = window.innerWidth;
       if (screenWidth > 850) {
-        setDropdownShow(false);
+        setDropdownShow([false, false]);
       }
     }
 
@@ -116,7 +132,7 @@ export default function Header() {
             <Link href="#">News</Link>
           </li>
           <li className="nav-item">
-            <Link href="#" onClick={toggleDropdown}>
+            <Link href="#" onClick={() => toggleDropdown(0)}>
               <div className="  " style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 More
                 <svg className="nav-arrow" style={{ marginLeft: '5px', alignItems: 'center' }} xmlns="http://www.w3.org/2000/svg" width="6.626" height="4.142" viewBox="0 0 6.626 4.142">
@@ -126,7 +142,7 @@ export default function Header() {
             </Link>
 
             {/* {dropdownShow && ( */}
-            <div className={`dropdown ${dropdownShow ? "dropdownShow" : ""}`}>
+            <div className={`dropdown ${dropdownShow[0] ? "dropdownShow" : ""}`}>
               <div className="dropdown-link">
                 <Link href="#">Battle</Link>
               </div>
@@ -167,7 +183,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="nav-item  locales" onClick={toggleDropdown}>
+          <div className="nav-item  locales" onClick={() => toggleDropdown(1)}>
             {/* English flex-center*/}
             <svg
               xmlns="http://www.w3.org/2000/svg" width="32.689" height="22" viewBox="0 0 32.689 22">
@@ -177,7 +193,7 @@ export default function Header() {
               </g>
             </svg>
 
-            <div className={`dropdown ${dropdownShow ? "dropdownShow" : ""}`}>
+            <div className={`dropdown ${dropdownShow[1] ? "dropdownShow" : ""}`}>
               <div className="dropdown-link">
                 English
               </div>

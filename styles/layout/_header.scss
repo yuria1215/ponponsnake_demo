@@ -169,7 +169,7 @@ header.top {
           opacity: 1;
 
           transition: var(--transition-time-fast) var(--transition-ease-in-out);
-// width: 200px;
+          // width: 200px;
 
         }
       }
@@ -294,29 +294,31 @@ header.top {
       line-height: var(--line-height);
       margin-right: var(--top-end-space-nav-end);
       // height: 50px;
-      
+
       cursor: pointer;
       position: relative;
 
-      svg{
+      svg {
         height: 100%;
       }
 
       @include rwd(850px) {
         height: unset;
-
-        
-        &.dropdown{
-          width: 100px;
-        }
-  
-        &:hover .dropdown{
-          width: 100px;
-        }
       }
 
+      & .dropdown {
+        @include rwd(850px) {
+          width: 100px;
+          transform: translateX(-50%)translateY(0%) !important;
+          left: 50%;
+        }
+        
+      }
 
-      
+    }
+    
+    .sign {
+      margin: 10px auto;
     }
 
     .index-button {
