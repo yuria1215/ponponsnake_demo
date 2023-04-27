@@ -1,7 +1,14 @@
+import ContactPopup from '@/components/layout/ContactPopup';
+
 export default function Footer() {
   return (
     <footer className="layout">
+
       <div className="top">
+
+        <ContactPopup />
+
+
         <div className="main-content">
           <div className="info-wrap">
             <div className="title">
@@ -62,9 +69,12 @@ export default function Footer() {
               <div className="links-item item">Privacy Policy</div>
             </div>
           </div>
+
         </div>
       </div>
+
       <div className="bottom">© 2023 - PonPonSnake All Rights Reserved</div>
+
     </footer>
   );
 }

@@ -52,7 +52,7 @@ function travelMapMove(num) {
 export default function telescopicSightMove() {
     //  TravelMapAll()  
     window.saveMapTimeOut= []
-    console.log(window.saveMapTimeOut)
+    // console.log(window.saveMapTimeOut)
     $('.RegionalBadge-icon-block img').on('click', function () {
         const id = $(this).attr('id')
         const num = id.slice(id.length - 1)
