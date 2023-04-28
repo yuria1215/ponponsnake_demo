@@ -52,56 +52,56 @@ export default function ContactPopup() {
 
             </div>
 
-
             <div className={`contact-popup ${showContactPopup ? "showContactPopup" : ""}`}>
-                <div className="contact-popup-inner">
-                    <div className="contact-title">
-                        Contact Us
+                    <div className="contact-popup-inner">
+                        <div className="contact-title">
+                            Contact Us
+                        </div>
+
+                        <div className="input-data">
+
+                            <div className="form-group">
+                                <input type="text" id="name-input" className="input-form-control" placeholder=" " />
+                                <label htmlFor="name-input">Your Name</label>
+                            </div>
+
+                            <div className="form-group">
+                                <input type="text" id="email-input" className="input-form-control" placeholder=" " />
+                                <label htmlFor="email-input">Your Email</label>
+                            </div>
+
+                            <div className="form-group">
+                                <input type="text" id="phone-input" className="input-form-control" placeholder=" " />
+                                <label htmlFor="phone-input">Your Phone</label>
+                            </div>
+
+                            <div className="form-group">
+                                <input type="text" id="title-input" className="input-form-control" placeholder=" " />
+                                <label htmlFor="title-input">Feedback Title</label>
+                            </div>
+
+                            <div className="form-group">
+                                <textarea id="message-textarea" className="textarea-form-control" placeholder=" " />
+                                <label htmlFor="message-textarea">What's About</label>
+                            </div>
+
+
+                            <button type="submit" className="submit-button">
+                                Submit
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16.08" height="16.08" viewBox="0 0 16.08 16.08">
+                                    <path id="send" d="M15.828.1a.561.561,0,0,1,.242.574l-2.3,13.783a.564.564,0,0,1-.287.4.55.55,0,0,1-.278.072.606.606,0,0,1-.215-.045l-4.065-1.66L6.755,15.874a.529.529,0,0,1-.44.206.487.487,0,0,1-.2-.036.574.574,0,0,1-.377-.539V12.374l7.753-9.5L3.9,11.172.358,9.718A.568.568,0,0,1,.286,8.7L15.217.081A.548.548,0,0,1,15.5,0a.556.556,0,0,1,.323.1Z" transform="translate(0.002)" fill="#343456" />
+                                </svg>
+
+
+                            </button>
+
+                        </div>
+
+
+
                     </div>
-
-                    <div className="input-data">
-
-                        <div className="form-group">
-                            <input type="text" id="name-input" className="input-form-control" placeholder=" " />
-                            <label htmlFor="name-input">Your Name</label>
-                        </div>
-
-                        <div className="form-group">
-                            <input type="text" id="email-input" className="input-form-control" placeholder=" " />
-                            <label htmlFor="email-input">Your Email</label>
-                        </div>
-
-                        <div className="form-group">
-                            <input type="text" id="phone-input" className="input-form-control" placeholder=" " />
-                            <label htmlFor="phone-input">Your Phone</label>
-                        </div>
-
-                        <div className="form-group">
-                            <input type="text" id="title-input" className="input-form-control" placeholder=" " />
-                            <label htmlFor="title-input">Feedback Title</label>
-                        </div>
-
-                        <div className="form-group">
-                            <textarea id="message-textarea" className="textarea-form-control" placeholder=" " />
-                            <label htmlFor="message-textarea">What's About</label>
-                        </div>
-
-
-                        <button type="submit" className="submit-button">
-                            Submit
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16.08" height="16.08" viewBox="0 0 16.08 16.08">
-                                <path id="send" d="M15.828.1a.561.561,0,0,1,.242.574l-2.3,13.783a.564.564,0,0,1-.287.4.55.55,0,0,1-.278.072.606.606,0,0,1-.215-.045l-4.065-1.66L6.755,15.874a.529.529,0,0,1-.44.206.487.487,0,0,1-.2-.036.574.574,0,0,1-.377-.539V12.374l7.753-9.5L3.9,11.172.358,9.718A.568.568,0,0,1,.286,8.7L15.217.081A.548.548,0,0,1,15.5,0a.556.556,0,0,1,.323.1Z" transform="translate(0.002)" fill="#343456" />
-                            </svg>
-
-
-                        </button>
-
-                    </div>
-
-
-
                 </div>
-            </div>
+
 
 
 
