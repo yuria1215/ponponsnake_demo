@@ -41,13 +41,39 @@ export default function Header() {
 
   const localeList = [
     {
-      text:'En'
+      text: 'English'
     },
     {
-      text:'Cn',
-      href:'/market'
+      text: '中文',
+      href: '/market'
     },
   ]
+
+  const moreList = [
+    {
+      text: 'Battle',
+      href: '/market'
+    },
+    {
+      text: 'Token',
+      href: '/'
+    },
+    {
+      text: 'Getting Starteen',
+      href: '/'
+    },
+    {
+      text: 'Whitepaper',
+      href: '/'
+    },
+    {
+      text: 'Cooperation',
+      href: '/'
+    },
+  ]
+
+
+
 
   let lastScrollTop = 0;
 
@@ -109,13 +135,17 @@ export default function Header() {
 
       <nav className={`mobileNav ${hamShow ? "show" : ""}`}>
         <div className="mobile-wrap d-flex">
+
           <div className="logo">
-            <img
-              className="img-fluid"
-              src={`${process.env.BASE_PATH}/images/nav/logo.png`}
-              alt="header logo"
-            />
+
+              <img
+                className="img-fluid"
+                src={`${process.env.BASE_PATH}/images/nav/logo.png`}
+                alt="header logo"
+              />
+
           </div>
+
 
           <div className="close cursor-pointer" onClick={() => hamHandler()}>
             <svg
@@ -179,7 +209,7 @@ export default function Header() {
           </li>
 
           <li className="nav-item">
-            <Dropdown ref={moreRef} list={[{text:'aaa'},{text:'bbb',href:'/'}]}>
+            <Dropdown ref={moreRef} list={moreList}>
               <Link href="#">
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   More
@@ -234,7 +264,7 @@ export default function Header() {
 
           <div className="nav-item  locales">
             {/* English flex-center*/}
-            <Dropdown ref={localesRef} list={localeList}>
+            <Dropdown ref={localesRef} list={[{ text: 'English', href: '/'  }, { text: '中文', href: '/' }]}>
               <svg
                 xmlns="http://www.w3.org/2000/svg" width="32.689" height="22" viewBox="0 0 32.689 22">
                 <g id="Group_2797" data-name="Group 2797" transform="translate(-1741 -50)">

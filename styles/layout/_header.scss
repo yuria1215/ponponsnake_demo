@@ -17,7 +17,7 @@ header.top {
   --transition-ease-in-out: ease-in-out;
 
   position: fixed;
-  z-index: 3;
+  z-index: 20;
   width: 100%;
   justify-content: space-between;
   padding: 0 8px;
@@ -233,26 +233,28 @@ header.top {
           width: 100%;
           // color: var(--white) !important;
           text-align: center;
-          padding: 0px 23px;
+          // padding: 0px 23px;
           transition: var(--transition-time) var(--transition-eases);
-
-
-
-          &:first-child {
+          
+          &.dropdown-link:first-child a {
             padding-top: 5px;
           }
 
-          &:last-child {
+          &.dropdown-link:last-child a{
             padding-bottom: 5px;
           }
-
 
           &:hover {
             // color: var(--white);
             background-color: rgba(75, 81, 145, 0.8);
             box-shadow: inset 0 0 10px rgba(197, 203, 254, 0.5);
-
           }
+
+          a{
+            display: block;
+            padding: 0px 23px;
+          }
+
 
           @include rwd(850px) {
             text-align: start;
@@ -261,6 +263,13 @@ header.top {
         }
 
 
+      }
+
+      .dropdown-button{
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        height: 100%;
       }
 
 
