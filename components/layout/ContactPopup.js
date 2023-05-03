@@ -156,8 +156,8 @@ export default function ContactPopup() {
             </div>
 
             <div className={`contact-popup ${showContactPopup ? "showContactPopup" : ""}`}>
-                <div className="contact-popup-inner">
-                    <div className="contact-title">
+                <div className="popup-inner">
+                    <div className="popup-title">
                         Contact Us
                     </div>
 

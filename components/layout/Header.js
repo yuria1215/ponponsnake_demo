@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
 import Dropdown from "@/components/common/Dropdown"
-
+import SignInPopup from '@/components/layout/SignInPopup';
 
 export default function Header() {
   const router = useRouter()
@@ -10,6 +10,13 @@ export default function Header() {
   const [headerHide, setHeaderHide] = useState(false);
   const moreRef = useRef(0)
   const localesRef = useRef(0)
+
+  const [showSignInPopup, setShowSignInPopup] = useState(false);
+
+
+  const handleSignInPopup = () => {
+    setShowSignInPopup(!showSignInPopup);
+  };
 
   const hamHandler = () => {
     setHamShow(!hamShow);
@@ -138,11 +145,11 @@ export default function Header() {
 
           <div className="logo">
 
-              <img
-                className="img-fluid"
-                src={`${process.env.BASE_PATH}/images/nav/logo.png`}
-                alt="header logo"
-              />
+            <img
+              className="img-fluid"
+              src={`${process.env.BASE_PATH}/images/nav/logo.png`}
+              alt="header logo"
+            />
 
           </div>
 
@@ -241,8 +248,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="nav-item  locales" onClick={() => toggleDropdown(1)}>
-            {/* English flex-center*/}
+          {/* <div className="nav-item  locales" onClick={() => toggleDropdown(1)}>
             <svg
               xmlns="http://www.w3.org/2000/svg" width="32.689" height="22" viewBox="0 0 32.689 22">
               <g id="Group_2797" data-name="Group 2797" transform="translate(-1741 -50)">
@@ -259,12 +265,11 @@ export default function Header() {
                 中文
               </div>
             </div>
-
-          </div>
+          </div> */}
 
           <div className="nav-item  locales">
             {/* English flex-center*/}
-            <Dropdown ref={localesRef} list={[{ text: 'English', href: '/'  }, { text: '中文', href: '/' }]}>
+            <Dropdown ref={localesRef} list={[{ text: 'English', href: '/' }, { text: '中文', href: '/' }]}>
               <svg
                 xmlns="http://www.w3.org/2000/svg" width="32.689" height="22" viewBox="0 0 32.689 22">
                 <g id="Group_2797" data-name="Group 2797" transform="translate(-1741 -50)">
@@ -275,11 +280,20 @@ export default function Header() {
             </Dropdown>
           </div>
 
-          <div className="sign flex-center">
+          <div className="sign flex-center" onClick={handleSignInPopup}>
             <button className="index-button cursor-pointer">Sign in</button>
           </div>
+
+
         </div>
       </nav>
+      
+      {showSignInPopup && (
+        <SignInPopup />
+      )}
+
     </header>
+
+
   );
 }
