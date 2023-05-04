@@ -11,12 +11,23 @@ export default function Header() {
   const moreRef = useRef(0)
   const localesRef = useRef(0)
 
+
+   // 註冊彈窗狀態 SignIn Popup
   const [showSignInPopup, setShowSignInPopup] = useState(false);
-
-
+  const [transitionPopup, setTransitionPopup] = useState(false);
+ 
   const handleSignInPopup = () => {
     setShowSignInPopup(!showSignInPopup);
+    setTransitionPopup(!transitionPopup)
   };
+  const handleCloseSignInPopup = () => {
+    setShowSignInPopup(false);
+    setTransitionPopup(false)
+  };
+
+  
+
+
 
   const hamHandler = () => {
     setHamShow(!hamShow);
@@ -287,9 +298,9 @@ export default function Header() {
 
         </div>
       </nav>
-      
+
       {showSignInPopup && (
-        <SignInPopup />
+        <SignInPopup transitionPopup={transitionPopup} handleCloseSignInPopup={handleCloseSignInPopup} />
       )}
 
     </header>

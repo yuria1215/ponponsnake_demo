@@ -1,14 +1,15 @@
 import React, { useState, useRef, useEffect } from "react"
 
-export default function SignInPopup() {
+export default function SignInPopup(props) {
 
 
-    const [showSignInPopup, setShowSignInPopup] = useState(false);
+    // const [showSignInPopup, setShowSignInPopup] = useState(false);
 
 
-    const handleSignInPopup = () => {
-        setShowSignInPopup(!showSignInPopup);
-    };
+    // const handleSignInPopup = () => {
+    //     props.setShowSignInPopup(false);
+    // };
+    const { handleCloseSignInPopup, transitionPopup } = props;
 
     // 如果點擊視窗以外的地方也會setShowSignInPopup(false);
     // const contactPopupRef = useRef(null);
@@ -72,7 +73,7 @@ export default function SignInPopup() {
 
 
 
-        
+
 
 
 
@@ -89,18 +90,18 @@ export default function SignInPopup() {
 
         console.log(formData);
 
-        // 點擊contact-popup以外的地方彈窗關閉
+
     };
 
 
 
     return (
         <div className="signInPopupBlock">
-
+            {/* 2. 彈窗transition 沒效 */}
             {/* <div className="signIn-popup showSignInPopup"> */}
-                <div className={`signIn-popup ${!showSignInPopup ? "showSignInPopup" : ""}`}>
+            <div className={`signIn-popup ${transitionPopup ? "showSignInPopup" : ""}`}>
 
-                <div className="signInPopup-close" onClick={handleSignInPopup}>
+                <div className="signInPopup-close" onClick={handleCloseSignInPopup}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16.971" height="16.97" viewBox="0 0 16.971 16.97">
                         <path id="x-pack" d="M9.725,13.87,13.891,9.7l2.373,2.381a2.529,2.529,0,0,1,0,3.578l-.588.588a2.529,2.529,0,0,1-3.578,0Zm6.532-12.5L15.669.777a2.529,2.529,0,0,0-3.578,0L8.521,4.355,4.943.777a2.529,2.529,0,0,0-3.578,0l-.588.588a2.529,2.529,0,0,0,0,3.578L4.355,8.521.777,12.1a2.529,2.529,0,0,0,0,3.578l.588.588a2.529,2.529,0,0,0,3.578,0l3.578-3.578,2.607-2.607,1.559-1.559,3.578-3.578a2.529,2.529,0,0,0,0-3.578Z" transform="translate(-0.035 -0.036)" fill="#343456" />
                     </svg>
