@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <h1>Market test</h1>
+        {/* <h1>Market test</h1> */}
       </Layout>
     </>
   );
