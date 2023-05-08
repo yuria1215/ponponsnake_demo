@@ -12,6 +12,7 @@ export default function Home() {
 
       <Layout>
         {/* <h1>Market test</h1> */}
+        <div className="">NFTs Market</div>
       </Layout>
     </>
   );
