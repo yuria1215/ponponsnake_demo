@@ -40,6 +40,11 @@ export default function CardList() {
                 </div>
             </div>
 
+            {/* 補足card數量，使最後一列整體置中card又靠左 */}
+            <i></i>
+            <i></i>
+            <i></i>
+
         </section>
     )
 }

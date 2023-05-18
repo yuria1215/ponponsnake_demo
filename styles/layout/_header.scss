@@ -124,7 +124,7 @@ header.top {
       margin-right: var(--nav-item-margin-right);
       cursor: pointer;
       position: relative;
-
+      align-self: center;
 
       a {
         color: var(--white);
@@ -304,12 +304,15 @@ header.top {
       line-height: var(--line-height);
       margin-right: var(--top-end-space-nav-end);
       // height: 50px;
+      height: 100% !important;
+
 
       cursor: pointer;
       position: relative;
 
       svg {
         height: 100%;
+        vertical-align: middle;
       }
 
       @include rwd(850px) {

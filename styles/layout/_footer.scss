@@ -83,32 +83,40 @@ footer.layout {
     }
 
     .socials {
+      grid-gap: 10px;
+      margin-bottom: 25px !important;
+
+      @include rwd(768px) {
+        grid-gap: 10px;
+      }
+
+      @include rwd(1200px) {
+        grid-gap: 15px;
+      }
 
       @include rwd(1500px) {
-        margin-bottom: 25px !important;
+        // margin-bottom: 25px !important;
       }
 
       a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        display: block;
         width: 10%;
-        max-width: 38px;
-        margin-right: 10px;
+        width: 36px;
+        height: 36px;
+        // margin-right: 10px;
 
-        @include rwd(768px) {
-          margin-right: 10px;
-        }
-
-        @include rwd(1200px) {
-          margin-right: 15px;
-        }
-
-        img {
-          margin-right: 5px;
-          width: 100%;
+        background-color: var(--lavender);
+        border-radius: 50%;
 
 
-        }
+
+        // img {
+        //   margin-right: 5px;
+        //   width: 100%;
+        // }
       }
 
     }

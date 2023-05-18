@@ -1,5 +1,8 @@
 import Head from "next/head";
 import Layout from "@/components/layout/Layout";
+import MarketFilter from '@/pages/market/components/MarketFilter';
+import CardList from '@/pages/market/components/CardList';
+
 
 export default function Home() {
   const basePath = process.env.BASE_PATH
@@ -11,8 +14,12 @@ export default function Home() {
       </Head>
 
       <Layout>
-        {/* <h1>Market test</h1> */}
-        <div className="">NFTs Market</div>
+        <div className="market_background">
+          <div className="market-title">NFTs Market</div>
+          <MarketFilter />
+
+          <CardList />
+        </div>
       </Layout>
     </>
   );

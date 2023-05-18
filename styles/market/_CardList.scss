@@ -1,0 +1,149 @@
+.card-list {
+    border: 1px solid red;
+    max-width: 1130px;
+    margin: 0 auto ;
+    width: 90%;
+    display: flex;
+    grid-gap: 40px;
+    flex-wrap: wrap;
+    // justify-content: flex-start;
+    justify-content: center;
+    // display: grid;
+    // grid-template-columns: auto auto auto auto;
+
+    .card {
+        width: 250px;
+        // height: 335px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-sizing: border-box;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+        border: solid 1px #dbadfc;
+        background-color: var(--navy);
+        position: relative;
+        // margin: 0 auto;
+
+        &:last-child {
+            margin-right: auto;
+        }
+
+        .card-label {
+            line-height: 1.5;
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row;
+            color: var(--light-lavender);
+            padding: 0px 11px 0px 7px;
+            background-color: var(--purple);
+            border-radius: 10px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 14px;
+            height: 26px;
+
+            .card-label-icon {
+                margin-right: 3.5px;
+                width: 16px;
+            }
+        }
+
+        .card-favorite {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 26px;
+            height: 26px;
+            background-color: var(--purple);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+
+            img {
+                width: 95%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+            }
+        }
+
+
+        .card-time {
+            color: var(--navy);
+            font-size: 12px;
+            text-align: center;
+            width: 100%;
+            padding: 4px 0 4px;
+            line-height: 1.5;
+            background-image: linear-gradient(to right, #c5cbfe, #eceeff);
+        }
+
+        .card-content {
+            // height: 90px;
+            padding: 11.1px 10px 11.2px;
+
+            .card-name {
+                display: flex;
+                font-size: 16px;
+                line-height: 1.5;
+                color: var(--light-lavender);
+            }
+
+            .card-price {
+                color: var(--light-lavender);
+                line-height: 1.5;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                .card-price-icon {
+                    width: 20px;
+                    margin-right: 4.5px;
+                }
+            }
+
+            .card-USD {
+                line-height: 1.5;
+                color: var(--lavender);
+                font-size: 12px;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        // 卡片等級顏色
+        .Epic {
+            background-image: linear-gradient(to bottom, #4a4878, #433d75 10%, #403872 21%, #3a356b 33%, #323062 69%, #2a2c5b 85%, #2d2e63 94%, #454676);
+        }
+
+        .Excellent {
+            background-image: linear-gradient(to bottom, #6d4878, #6a3d75 10%, #673872 21%, #64356b 33%, #5c3062 69%, #552a5b 85%, #5a2d63 94%, #704576);
+        }
+
+        .Rare {
+            background-image: linear-gradient(to bottom, #9c5388, #944c7f 10%, #8f487c 21%, #92497d 33%, #924a7f 69%, #8e427f 85%, #974b85 94%, #a3608d);
+        }
+
+        .Legend {
+            background-image: linear-gradient(to bottom, #523488, #5b3791 10%, #5d3792 21%, #633895 33%, #623895 69%, #5d3896 85%, #4d368e 94%, #593896);
+        }
+    }
+
+    i{
+        width: 250px;
+    }
+
+
+
+}
