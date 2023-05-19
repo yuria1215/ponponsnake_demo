@@ -22,9 +22,18 @@
         background-color: var(--navy);
         position: relative;
         // margin: 0 auto;
+        cursor: pointer;
+        transition: all 0.05s ease-in-out;
+
 
         &:last-child {
             margin-right: auto;
+
+        }
+
+        &:hover{
+            box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px);
         }
 
         .card-label {
