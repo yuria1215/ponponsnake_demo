@@ -1,45 +1,62 @@
 import { useState } from "react";
+import cardDataRider from '@/pages/data/cardDataRider.json';
+import cardDataItem from '@/pages/data/cardDataItem.json';
+import cardDataLand from '@/pages/data/cardDataLand.json';
+
+
 
 export default function CardList() {
+
+    const basePath = process.env.BASE_PATH || '';
+
+    // 合併卡片資料
+    const mergedCardData = [...cardDataRider, ...cardDataItem, ...cardDataLand];
+
     return (
         <section className="card-list">
 
-            <div className="card">
+            {mergedCardData.map((card, index) => (
 
-                <div className="card-label">
-                    <img className="card-label-icon" src={`${process.env.BASE_PATH}/images/marketplace/card/ElementsIcon-Water.png`} alt="" />
-                    Epic
-                </div>
+                <div className={`card ${card.type}`} key={index}>
 
-                <div className="card-favorite">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15.807" height="14.261" viewBox="0 0 15.807 14.261">
-                        <path id="heart-solid" d="M17.317,5.579A4.025,4.025,0,0,0,12.53,3.756,4.876,4.876,0,0,0,9.906,5.619,4.876,4.876,0,0,0,7.283,3.756,4.034,4.034,0,0,0,2.5,5.579c-.929,1.9-.543,4.041,1.146,6.358A30.029,30.029,0,0,0,9.6,17.723a.494.494,0,0,0,.608,0,29.493,29.493,0,0,0,5.963-5.785c1.685-2.317,2.07-4.456,1.141-6.359Z" transform="translate(-2.003 -3.567)" fill="#eceeff" />
-                    </svg>
-
-                </div>
-
-                <div className="card-image">
-                    <img src={`${process.env.BASE_PATH}/images/marketplace/card/NFT/card_001.png`} alt="" />
-                </div>
-                <div className="card-time">a few seconds ago</div>
-
-                <div className="card-content Epic">
-                    <div className="card-name">
-                        Celica
-                        &nbsp;
-                        <span className="card-number">#75</span>
+                    <div className="card-label">
+                        <img className="card-label-icon" src={`${basePath}/images/marketplace/card/ElementsIcon-${card.labelIcon}.png`} alt="" />
+                        {/* img className="card-label-icon" src={`${process.env.BASE_PATH}/images/marketplace/card/ElementsIcon-Water.png`} alt="" /> */}
+                        <div className="card-label-rarity">{card.rarity}</div>
                     </div>
 
-                    <div className="card-price">
-                        <img className="card-price-icon" src={`${process.env.BASE_PATH}/images/marketplace/card/SRC.png`} alt="" />
-                        <span>10,000 SRC</span>
+                    <div className="card-favorite">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.179" viewBox="0 0 13.5 12.179">
+                            <path id="heart-solid" d="M15.082,5.285a3.437,3.437,0,0,0-4.089-1.557,4.165,4.165,0,0,0-2.24,1.591,4.165,4.165,0,0,0-2.24-1.591A3.445,3.445,0,0,0,2.423,5.285c-.793,1.624-.464,3.451.979,5.43A25.646,25.646,0,0,0,8.5,15.657a.422.422,0,0,0,.519,0,25.188,25.188,0,0,0,5.093-4.941c1.439-1.979,1.768-3.806.975-5.43Z" transform="translate(-2.003 -3.567)" fill="#eceeff" />
+                        </svg>
                     </div>
 
-                    <div className="card-USD">$4.83 USD</div>
+                    <div className="card-image">
+                        <img src={`${basePath}/images/marketplace/card/${card.image}.png`} alt="" />
 
+                        {/* <img src={`${process.env.BASE_PATH}/images/marketplace/card/rider/rider_001.png`} alt="" /> */}
+                    </div>
+                    <div className="card-time">{card.time}</div>
+
+                    <div className={`card-content ${card.rarity}`}>
+
+                        <div className="card-name">{card.name}</div>
+
+                        <div className="card-info">
+                            <div className="card-number">#{card.number}</div>
+
+                            <div className="card-price">
+                                <img className="card-price-icon" src={`${process.env.BASE_PATH}/images/marketplace/card/SRC.png`} alt="" />
+                                <span>{card.priceSRC}</span>
+                            </div>
+                        </div>
+
+                        <div className="card-USD">${card.priceUSD} USD</div>
+
+                    </div>
                 </div>
-            </div>
 
+            ))}
             {/* 補足card數量，使最後一列整體置中card又靠左 */}
             <i></i>
             <i></i>

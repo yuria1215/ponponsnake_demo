@@ -1,7 +1,7 @@
 .card-list {
-    border: 1px solid red;
+    // border: 1px solid red;
     max-width: 1130px;
-    margin: 0 auto ;
+    margin: 0 auto;
     width: 90%;
     display: flex;
     grid-gap: 40px;
@@ -69,13 +69,15 @@
             overflow: hidden;
 
             img {
-                width: 95%;
+                width: 90%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin: 0 auto;
             }
         }
+
+
 
 
         .card-time {
@@ -91,13 +93,31 @@
         .card-content {
             // height: 90px;
             padding: 11.1px 10px 11.2px;
+            // height: 100%;
 
             .card-name {
-                display: flex;
                 font-size: 16px;
-                line-height: 1.5;
+                height: 100%;
+                width: 65%;
+                margin-bottom: 2px;
                 color: var(--light-lavender);
+                line-height: 1.5;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
+            .card-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                .card-number {
+                    font-size: 14px;
+                    color: var(--light-lavender);
+                    line-height: 1.5;
+                }
+            }
+
 
             .card-price {
                 color: var(--light-lavender);
@@ -140,7 +160,37 @@
         }
     }
 
-    i{
+
+    .item {
+
+        .card-label {
+            padding: 0px 11px 0px 11px;
+
+            .card-label-icon {
+                display: none;
+            }
+        }
+
+    }
+
+    .land {
+        .card-label {
+            padding: 0px 11px 0px 11px;
+
+            .card-label-icon {
+                display: none;
+            }
+        }
+
+
+        .card-image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    i {
         width: 250px;
     }
 

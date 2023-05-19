@@ -1,0 +1,42 @@
+[
+    {
+        "type":"land",
+        "rarity": "Excellent",
+        "image":"land/land_001",
+        "time": "a few seconds ago",
+        "name":" Dragon Land 1%",
+        "number":"1",
+        "priceSRC": "12,000",
+        "priceUSD": "80.00"
+    },
+    {
+        "type":"land",
+        "rarity": "Epic",
+        "image":"land/land_002",
+        "time": "a few seconds ago",
+        "name":"Dragon Land 5%",
+        "number":"2",
+        "priceSRC": "150,000",
+        "priceUSD": "100.00"
+    },
+    {
+        "type":"land",
+        "rarity": "Legend",
+        "image":"land/land_003",
+        "time": "a minute ago",
+        "name":" Dragon Land 10%",
+        "number":"3",
+        "priceSRC": "200,000",
+        "priceUSD": "120.00"
+    },
+    {
+        "type":"land",
+        "rarity": "The Abyss",
+        "image":"land/land_004",
+        "time": "a minute ago",
+        "name":"Dragon Land 15%",
+        "number":"4",
+        "priceSRC": "500,000",
+        "priceUSD": "150.00"
+    }
+]
