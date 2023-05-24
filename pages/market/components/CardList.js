@@ -4,17 +4,15 @@ import cardDataItem from '@/pages/data/cardDataItem.json';
 import cardDataLand from '@/pages/data/cardDataLand.json';
 
 
-export default function CardList({ filteredCardData }) {
+export default function CardList({ selectedCardData }) {
 
     const basePath = process.env.BASE_PATH || '';
-
-    // 合併卡片資料
-    // const mergedCardData = [...cardDataRider, ...cardDataItem, ...cardDataLand];
 
     return (
         <section className="card-list">
 
-            {filteredCardData.map((card, index) => (
+            {/* 根據篩選後的卡片資料渲染卡片 */}
+            {selectedCardData.map((card, index) => (
 
                 <div className={`card ${card.type}`} key={index}>
 

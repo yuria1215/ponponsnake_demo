@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Layout from "@/components/layout/Layout";
-import MarketFilter from '@/pages/market/components/MarketFilter';
+import MarketNavigation from '@/pages/market/components/MarketNavigation';
 import CardList from '@/pages/market/components/CardList';
 
 
 export default function Marketplace() {
-  // 在MarketFilter组件中更新篩選後的卡片資料的回調函數
-  const handleFilterChange = (data) => {
-    setFilteredCardData(data);
+
+  // 定義選擇後的卡片資料
+  const [selectedCardData, setSelectedCardData] = useState([]);
+
+  // 在MarketFilter组件中更新選擇後的卡片資料的回調函數
+  const handleSelectChange = (data) => {
+    setSelectedCardData(data);
   };
-
-  // 定義篩選後的卡片資料
-  const [filteredCardData, setFilteredCardData] = useState([]);
-
 
 
   return (
@@ -25,9 +25,12 @@ export default function Marketplace() {
       <Layout>
         <div className="market_background">
           <div className="market-title">NFTs Market</div>
-          <MarketFilter onFilterChange={handleFilterChange} />
 
-          <CardList filteredCardData={filteredCardData} />
+          {/* 顯示篩選器並設定onSelectChange回調函數 */}
+          <MarketNavigation onSelectChange={handleSelectChange} />
+
+          {/* 顯示卡片清單，傳遞篩選後的卡片資料 */}
+          <CardList selectedCardData={selectedCardData} />
         </div>
       </Layout>
     </>
