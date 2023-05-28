@@ -7,7 +7,9 @@ import cardDataLand from '@/pages/data/cardDataLand.json';
 export default function CardList({ selectedCardData }) {
 
     const basePath = process.env.BASE_PATH || '';
-
+    // function imgUrl (image) {
+    //     return `${basePath}/images/marketplace/card/${image}.png`
+    // }
     return (
         <section className="card-list">
 
@@ -17,7 +19,7 @@ export default function CardList({ selectedCardData }) {
                 <div className={`card ${card.type}`} key={index}>
 
                     <div className="card-label">
-                        <img className="card-label-icon" src={`${basePath}/images/marketplace/card/ElementsIcon-${card.labelIcon}.png`} alt="" />
+                        {card.labelIcon && <img className="card-label-icon" src={`${basePath}/images/marketplace/card/ElementsIcon-${card.labelIcon}.png`} alt="" />}
                         {/* img className="card-label-icon" src={`${process.env.BASE_PATH}/images/marketplace/card/ElementsIcon-Water.png`} alt="" /> */}
                         <div className="card-label-rarity">{card.rarity}</div>
                     </div>
@@ -30,6 +32,7 @@ export default function CardList({ selectedCardData }) {
 
                     <div className="card-image">
                         <img src={`${basePath}/images/marketplace/card/${card.image}.png`} alt="" />
+                        {/* <img src={imgUrl(card.image)} alt="" /> */}
 
                         {/* <img src={`${process.env.BASE_PATH}/images/marketplace/card/rider/rider_001.png`} alt="" /> */}
                     </div>

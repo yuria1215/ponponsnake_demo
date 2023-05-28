@@ -31,7 +31,7 @@ export default function MarketNavigation({ onSelectChange }) {
         // 呼叫父元件傳遞的onSelectChange回調函數，並傳遞選擇後的資料
         onSelectChange(filteredData);
 
-    }, [selectedType, onSelectChange]);
+    }, [selectedType]);
 
     return (
         <section className="market-navigation">
@@ -77,7 +77,7 @@ export default function MarketNavigation({ onSelectChange }) {
                     <div className="dropdown-block">
                         <FilterDropdown />
                     </div>
-                    
+
                     <div className="dropdown-block">
 
                         <div className="button" id="button-sort">
