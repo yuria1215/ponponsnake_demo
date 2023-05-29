@@ -12,10 +12,10 @@ export default function Header() {
   const localesRef = useRef(0)
 
 
-   // 註冊彈窗狀態 SignIn Popup
+  // 註冊彈窗狀態 SignIn Popup
   const [showSignInPopup, setShowSignInPopup] = useState(false);
   const [transitionPopup, setTransitionPopup] = useState(false);
- 
+
   const handleSignInPopup = () => {
     setShowSignInPopup(!showSignInPopup);
     setTransitionPopup(!transitionPopup)
@@ -25,7 +25,7 @@ export default function Header() {
     setTransitionPopup(false)
   };
 
-  
+
 
 
 
@@ -127,11 +127,14 @@ export default function Header() {
   return (
     <header className={`top aic d-flex ${headerHide ? "hide" : ""}`}>
       <div className="logo">
-        <img
-          className="img-fluid"
-          src={`${process.env.BASE_PATH}/images/nav/logo.png`}
-          alt="header logo"
-        />
+
+        <Link href="/">
+          <img
+            className="img-fluid"
+            src={`${process.env.BASE_PATH}/images/nav/logo.png`}
+            alt="header logo"
+          />
+        </Link>
       </div>
 
       <div className="ham cursor-pointer" onClick={() => hamHandler()}>
