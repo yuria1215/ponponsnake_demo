@@ -13,7 +13,7 @@ export default function CardList({ selectedCardData }) {
     return (
         <section className="card-list">
 
-            {/* 根據篩選後的卡片資料渲染卡片test */}
+            {/* 根據篩選後的卡片資料渲染卡片testtest */}
             {selectedCardData.map((card, index) => (
 
                 <div className={`card ${card.type}`} key={index}>
