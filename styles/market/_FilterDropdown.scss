@@ -1,4 +1,3 @@
-
 .button {
     border-radius: 10px;
     height: 48px;
@@ -40,6 +39,7 @@
     transition: 0.15s ease-out;
     line-height: 2.8em;
     font-weight: 300;
+    z-index: 1;
 
 
     @include rwd(850px) {
@@ -57,6 +57,7 @@
         transition: var(--transition-time-fast) var(--transition-ease-in-out);
         position: initial;
 
+
         @include rwd(850px) {
             position: absolute;
             min-width: 200px;
@@ -70,8 +71,18 @@
     }
 
 
-    a {
+    span {
         color: var(--white) !important;
+    }
+
+    .filter-type {
+        background-color: rgb(75, 81, 145, 0.3);
+        box-shadow: inset 0 0 10px 0px rgba(197, 203, 254, 0.1);
+        display: block;
+        padding: 0px 23px;
+
+        display: flex;
+        align-items: center;
     }
 
 
@@ -82,11 +93,11 @@
         // padding: 0px 23px;
         transition: var(--transition-time) var(--transition-eases);
 
-        &.dropdown-link:first-child a {
+        &.dropdown-link:first-child span {
             padding-top: 5px;
         }
 
-        &.dropdown-link:last-child a {
+        &.dropdown-link:last-child span {
             padding-bottom: 5px;
         }
 
@@ -94,16 +105,45 @@
             // color: var(--white);
             background-color: rgba(75, 81, 145, 0.8);
             box-shadow: inset 0 0 10px rgba(197, 203, 254, 0.5);
+            cursor: pointer;
         }
 
-        a {
+        span {
             display: block;
             padding: 0px 23px;
+
+            display: flex;
+            align-items: center;
         }
 
 
         @include rwd(850px) {
             text-align: start;
+        }
+    }
+
+    .checkbox {
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        border: 1px solid var(--lavender);
+        margin-right: 10px;
+        position: relative;
+    }
+
+    .checkMark {
+        opacity: 0;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+
+    .checkboxCheck {
+        background-color: var(--lavender);
+
+        .checkMarkShow {
+            opacity: 1;
         }
     }
 }
