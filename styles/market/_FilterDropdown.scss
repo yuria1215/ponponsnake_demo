@@ -83,6 +83,15 @@
 
         display: flex;
         align-items: center;
+
+
+        &:first-child span {
+            padding-top: 5px;
+        }
+
+        span {
+            font-weight: 400;
+        }
     }
 
 
