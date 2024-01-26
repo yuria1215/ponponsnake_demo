@@ -57,11 +57,11 @@
         transition: var(--transition-time-fast) var(--transition-ease-in-out);
         position: initial;
 
+        position: absolute;
+        min-width: 200px;
 
-        @include rwd(850px) {
-            position: absolute;
-            min-width: 200px;
-        }
+
+        @include rwd(850px) {}
     }
 
 
@@ -85,7 +85,7 @@
         align-items: center;
 
 
-        &:first-child span {
+        &:first-child {
             padding-top: 5px;
         }
 
@@ -155,4 +155,10 @@
             opacity: 1;
         }
     }
+
+    .checkbox-icon {
+        margin-right: 3px;
+    }
+
+
 }

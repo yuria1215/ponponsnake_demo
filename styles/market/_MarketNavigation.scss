@@ -10,9 +10,19 @@
         width: 90%;
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+
         color: var(--lavender);
         font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+
+
+        @include rwd-max(750px) {
+
+            justify-content: center;
+
+        }
 
         .left-block {
             display: flex;
@@ -44,7 +54,7 @@
                     border: solid 0.5px rgba(197, 203, 254, 0.5);
                 }
 
-                &:not(:last-child){
+                &:not(:last-child) {
                     margin-right: 10px;
                 }
 
@@ -65,11 +75,12 @@
             display: flex;
             align-items: center;
             font-size: 16px;
+            padding: 15px 0;
 
-            .dropdown-block{
+            .dropdown-block {
                 position: relative;
 
-                &:not(:last-child){
+                &:not(:last-child) {
                     margin-right: 10px;
                 }
 
