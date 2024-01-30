@@ -1,4 +1,8 @@
 import { useState, useRef, useEffect } from "react";
+import cardDataRider from '@/pages/data/cardDataRider.json';
+import cardDataItem from '@/pages/data/cardDataItem.json';
+import cardDataLand from '@/pages/data/cardDataLand.json';
+
 
 // 定義一個可重複使用的 Checkbox 元件
 const FilterCheckbox = ({ checkboxStates, onClick }) => (
@@ -24,7 +28,7 @@ const FilterCheckbox = ({ checkboxStates, onClick }) => (
 );
 
 // 前面帶有icon的checkbox
-const Checkbox = ({ name, checked, onClick }) => (
+const FilterCheckboxIcon = ({ name, checked, onClick }) => (
     <div className="dropdown-link" onClick={() => onClick(name)}>
         <span>
             <div className={`checkbox ${checked ? "checkboxCheck" : ""}`}>
@@ -48,12 +52,19 @@ export default function FilterDropdown() {
     // const [checkboxClick, setCheckboxClick] = useState(false);
     // 狀態變數，用於控制勾選框的狀態
     const [checkboxClick, setCheckboxClick] = useState({
-        Rarity: { Excellent: false, Rare: false, Legend: false, Ordinary: false, Cooperation: false },
-        Talent: { Water: false, Fire: false, Earth: false, Wind: false },
+        Rarity: {
+            Excellent: false,
+            Rare: false,
+            Legend: false,
+            Ordinary: false,
+            Cooperation: false
+        },
+        // Talent: { Water: false, Fire: false, Earth: false, Wind: false },
     });
 
     // const [checkboxClick2, setCheckboxClick2] = useState(false);
 
+    /*
     // 定義不同 Talent 的 icon 資訊
     const talents = [
         { name: "Water", iconPath: `${process.env.BASE_PATH}/images/marketplace/marketFilter/ElementsIcon-Water.png` },
@@ -61,6 +72,7 @@ export default function FilterDropdown() {
         { name: "Earth", iconPath: `${process.env.BASE_PATH}/images/marketplace/marketFilter/ElementsIcon-Earth.png` },
         { name: "Wind", iconPath: `${process.env.BASE_PATH}/images/marketplace/marketFilter/ElementsIcon-Wind.png}` },
     ];
+    */
 
 
     // 處理展開收合選單的點擊事件
@@ -78,6 +90,9 @@ export default function FilterDropdown() {
                 [checkboxName]: !prevStates[group][checkboxName],
             },
         }));
+
+
+
     };
     // const clickCheckbox2 = () => {
     //     setCheckboxClick2(!checkboxClick2);
@@ -95,6 +110,7 @@ export default function FilterDropdown() {
             [checkboxName]: !prevStates[checkboxName],
         }));
     };
+
 
 
 
@@ -118,6 +134,7 @@ export default function FilterDropdown() {
                 {/* 使用 FilterCheckbox 元件，傳入相應的 checkboxStates 和 clickCheckbox 函數 */}
                 <FilterCheckbox checkboxStates={checkboxClick.Rarity} onClick={(name) => clickCheckbox("Rarity", name)} />
 
+
                 {/* Talent 分類 */}
                 <div className="filter-type">
                     <span>TALENT</span>
@@ -128,10 +145,10 @@ export default function FilterDropdown() {
 
 
 
-                <Checkbox name="Water" checked={checkboxStates2["Water"]} onClick={clickCheckbox2} />
-                <Checkbox name="Fire" checked={checkboxStates2["Fire"]} onClick={clickCheckbox2} />
-                <Checkbox name="Earth" checked={checkboxStates2["Earth"]} onClick={clickCheckbox2} />
-                <Checkbox name="Wind" checked={checkboxStates2["Wind"]} onClick={clickCheckbox2} />
+                <FilterCheckboxIcon name="Water" checked={checkboxStates2["Water"]} onClick={clickCheckbox2} />
+                <FilterCheckboxIcon name="Fire" checked={checkboxStates2["Fire"]} onClick={clickCheckbox2} />
+                <FilterCheckboxIcon name="Earth" checked={checkboxStates2["Earth"]} onClick={clickCheckbox2} />
+                <FilterCheckboxIcon name="Wind" checked={checkboxStates2["Wind"]} onClick={clickCheckbox2} />
 
                 {/* <div className="dropdown-link" onClick={() => clickCheckbox2("Water")}>
                     <span>
