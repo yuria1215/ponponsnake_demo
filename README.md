@@ -10,3 +10,6 @@ yarn dev
 # or
 pnpm dev
 ```
+
+build
+npm run deploy
