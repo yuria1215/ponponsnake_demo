@@ -11,5 +11,6 @@ yarn dev
 pnpm dev
 ```
 
-build
+```build
 npm run deploy
+```
