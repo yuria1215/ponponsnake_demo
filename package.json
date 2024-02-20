@@ -10,6 +10,7 @@
     "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Build & Deploy gh-pages\" && git subtree push --prefix out origin gh-pages",
     "gh": "git add out/ && git commit -m \"Build & Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
+  "homepage": "https://yuria1215.github.io/ponponsnake_demo/",
   "dependencies": {
     "echarts-for-react": "^3.0.2",
     "next": "13.2.4",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.3.1"
