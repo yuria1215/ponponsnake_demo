@@ -13,5 +13,6 @@ pnpm dev
 
 
 ```build
+npm run build
 npm run deploy
 ```
