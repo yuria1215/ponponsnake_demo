@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Layout from "@/components/layout/Layout";
-import MarketNavigation from '@/pages/market/components/MarketNavigation';
-import CardList from '@/pages/market/components/CardList';
+import MarketNavigation from '@/components/market/MarketNavigation';
+import CardList from '@/components/market/CardList';
+
 
 
 export default function Marketplace() {
