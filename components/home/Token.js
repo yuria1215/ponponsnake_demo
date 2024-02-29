@@ -1,13 +1,13 @@
-import { useEffect,useRef  ,useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactEcharts from 'echarts-for-react';
-import echarts from 'echarts';
+import * as echarts from 'echarts';
 
 
 export default function Token() {
     const rect = useRef(null);
-    let position ;
+    let position;
 
-    const [ReactEchartsShow, setReactEchartsShow]  = useState(false)
+    const [ReactEchartsShow, setReactEchartsShow] = useState(false)
     const option = {
 
         series: [
@@ -141,7 +141,7 @@ export default function Token() {
                     '#B0B3F8',
                     '#B0C3F8',
                     '#B7D1FF'
-                  ],
+                ],
 
 
                 // color: [
@@ -253,13 +253,13 @@ export default function Token() {
         ]
     };
     useEffect(() => {
-        position =(rect.current.getBoundingClientRect().top - rect.current.getBoundingClientRect().height) -200
-        
-        window.addEventListener("scroll", ()=>{
-            if(window.scrollY > position){
+        position = (rect.current.getBoundingClientRect().top - rect.current.getBoundingClientRect().height) - 200
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > position) {
                 setReactEchartsShow(true)
             }
-            
+
         })
     }, []);
     return (
@@ -285,14 +285,14 @@ export default function Token() {
 
                             {/* <img src={`${process.env.BASE_PATH}/images/token/chart.png`} alt="" /> */}
                             <div className="Pie-Chart" id="Pie-Chart" ref={rect} >
-                                {ReactEchartsShow &&(
-                                <ReactEcharts
-                                    echarts={echarts}
-                                    option={option}
-                                    style={{ height: '400px', width: '100%' }}
-                                />
+                                {ReactEchartsShow && (
+                                    <ReactEcharts
+                                        echarts={echarts}
+                                        option={option}
+                                        style={{ height: '400px', width: '100%' }}
+                                    />
                                 )}
-                                
+
                             </div>
                         </div>
                     </div>
