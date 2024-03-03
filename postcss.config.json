@@ -6,7 +6,7 @@
       {
         "autoprefixer": {
           "flexbox": "no-2009",
-          "grid": "autoplace"
+          "grid": false
         },
         "stage": 3,
         "features": {

@@ -15,7 +15,7 @@ export default function CardList({ selectedCardData }) {
             {/* 根據篩選後的卡片資料渲染卡片testtest */}
             {selectedCardData.map((card, index) => (
 
-                <div className={`card ${card.type}`} key={index}>
+                <div className={`card ${card.type}`} key={card.name}>
 
                     <div className="card-label">
                         {card.labelIcon && <img className="card-label-icon" src={`${basePath}/images/marketplace/card/ElementsIcon-${card.labelIcon}.png`} alt="" />}

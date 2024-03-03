@@ -44,7 +44,7 @@ const FilterCheckboxIcon = ({ name, checked, onClick }) => (
 
 
 
-export default function FilterDropdown() {
+export default function FilterDropdown({ onSelectChange }) {
     //點擊展開filter下拉選單
     const [filterDropdownShow, setFilterDropdownShow] = useState(false);
 
@@ -61,6 +61,8 @@ export default function FilterDropdown() {
         },
         // Talent: { Water: false, Fire: false, Earth: false, Wind: false },
     });
+
+    const [selectedFilter, setSelectedFilter] = useState([])
 
     // const [checkboxClick2, setCheckboxClick2] = useState(false);
 
@@ -80,20 +82,40 @@ export default function FilterDropdown() {
         setFilterDropdownShow(!filterDropdownShow);
     }
 
+    const selectedFilterCheck = (checkboxName, isCheck) => {
+        if (isCheck) {
+            setSelectedFilter((prevStates) => {
+                const isExistName = prevStates.includes(checkboxName)
+                const names = isExistName ? prevStates : [...prevStates, checkboxName]
+                onSelectChange(names)
+                return names
+            })
+        } else {
+            setSelectedFilter((prevStates) => {
+                const names = prevStates.filter(name => name !== checkboxName)
+                onSelectChange(names)
+                return names
+            })
+        }
+    }
 
     // 處理勾選框的點擊事件
     const clickCheckbox = (group, checkboxName) => {
-        setCheckboxClick((prevStates) => ({
-            ...prevStates,
-            [group]: {
-                ...prevStates[group],
-                [checkboxName]: !prevStates[group][checkboxName],
-            },
-        }));
-
-
+        let isChecked = null
+        setCheckboxClick((prevStates) => {
+            isChecked = !prevStates[group][checkboxName]
+            selectedFilterCheck(checkboxName, isChecked)
+            return {
+                ...prevStates,
+                [group]: {
+                    ...prevStates[group],
+                    [checkboxName]: !prevStates[group][checkboxName],
+                },
+            }
+        });
 
     };
+
     // const clickCheckbox2 = () => {
     //     setCheckboxClick2(!checkboxClick2);
     // }
@@ -105,10 +127,16 @@ export default function FilterDropdown() {
     });
 
     const clickCheckbox2 = (checkboxName) => {
-        setCheckboxStates2((prevStates) => ({
-            ...prevStates,
-            [checkboxName]: !prevStates[checkboxName],
-        }));
+        let isChecked = null
+        setCheckboxStates2((prevStates) => {
+            isChecked = !prevStates[checkboxName]
+            selectedFilterCheck(checkboxName, isChecked)
+            return {
+                ...prevStates,
+                [checkboxName]: isChecked,
+            }
+        });
+
     };
 
 

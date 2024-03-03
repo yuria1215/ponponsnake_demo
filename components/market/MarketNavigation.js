@@ -2,36 +2,91 @@ import { useState, useEffect } from "react";
 import cardDataRider from '@/data/cardData/cardDataRider.json';
 import cardDataItem from '@/data/cardData/cardDataItem.json';
 import cardDataLand from '@/data/cardData/cardDataLand.json';
+// import cardData from "@/data/cardData/cardData.js";
 
 import FilterDropdown from '@/components/market/MarketNavigation/FilterDropdown';
 
 export default function MarketNavigation({ onSelectChange }) {
+    const cardData = [...cardDataRider, ...cardDataItem, ...cardDataLand];
 
     // 定義選取的類型狀態
-    const [selectedType, setSelectedType] = useState('All');
-    const [selectedCardData, setSelectedCardData] = useState([]);
+    const [selectedType, setSelectedType] = useState('all');
+    const [selectedCardData, setSelectedCardData] = useState(cardData);
+    const [filterNames, setFilterNames] = useState([]);
+    const [isSorted, setIsSorted] = useState(false);
 
-
-    useEffect(() => {
-        // 選擇卡片資料
-        let filteredData = [];
-        if (selectedType === 'All') {
-            filteredData = [...cardDataRider, ...cardDataItem, ...cardDataLand];
-        } else if (selectedType === 'Rider') {
-            filteredData = cardDataRider;
-        } else if (selectedType === 'Item') {
-            filteredData = cardDataItem;
-        } else if (selectedType === 'Land') {
-            filteredData = cardDataLand;
+    const typeSelect = type => {
+        let cards = cardData
+        if (type === 'all') {
+            setSelectedCardData(cards)
+        } else {
+            cards = cardData.filter(card => card.type == type)
+            setSelectedCardData(cards)
         }
+        setSelectedType(type);
+        onSelectChange(cards);
+        return cards
+    }
 
-        // 設定選擇後的卡片資料狀態
-        setSelectedCardData(filteredData);
+    const handleSelectChange = filterNames => {
+        const cards = typeSelect(selectedType)
+        setFilterNames(filterNames)
+        if (filterNames.length === 0) {
+            setSelectedCardData(cards)
+            onSelectChange(cards);
+            return cards
+        } else {
+            const filtered = cards.filter(card => {
+                const { rarity, labelIcon } = card
+                const hasRarity = rarity && filterNames.includes(rarity)
+                const hasIcon = labelIcon && filterNames.includes(labelIcon)
+                return hasRarity || hasIcon
+            })
+            setSelectedCardData(filtered)
+            onSelectChange(filtered);
+            return filtered
+        }
+    }
 
-        // 呼叫父元件傳遞的onSelectChange回調函數，並傳遞選擇後的資料
-        onSelectChange(filteredData);
+    const sort = cards => {
+        if (isSorted) {
+            handleSelectChange(filterNames)
+            setIsSorted(false)
+        } else {
+            const newCards = cards.slice()
+            const sorted = newCards.sort((pre, next) => {
+                return pre.priceUSD - next.priceUSD
+            })
+            setSelectedCardData(sorted)
+            setIsSorted(true)
+        }
+    }
 
-    }, [selectedType]);
+    onSelectChange(selectedCardData)
+
+
+
+
+    // useEffect(() => {
+    //     // 選擇卡片資料
+    //     let filteredData = [];
+    //     if (selectedType === 'All') {
+    //         filteredData = [...cardDataRider, ...cardDataItem, ...cardDataLand];
+    //     } else if (selectedType === 'Rider') {
+    //         filteredData = cardDataRider;
+    //     } else if (selectedType === 'Item') {
+    //         filteredData = cardDataItem;
+    //     } else if (selectedType === 'Land') {
+    //         filteredData = cardDataLand;
+    //     }
+
+    //     // 設定選擇後的卡片資料狀態
+    //     setSelectedCardData(filteredData);
+
+    //     // 呼叫父元件傳遞的onSelectChange回調函數，並傳遞選擇後的資料
+    //     onSelectChange(filteredData);
+
+    // }, [selectedType]);
 
     return (
         <section className="market-navigation">
@@ -39,32 +94,32 @@ export default function MarketNavigation({ onSelectChange }) {
                 <div className="left-block">
 
                     <div
-                        className={`type ${selectedType === 'All' ? 'current' : ''}`}
-                        onClick={() => setSelectedType('All')}
+                        className={`type ${selectedType === 'all' ? 'current' : ''}`}
+                        onClick={() => typeSelect('all')}
                     >
                         <img className="type-icon" src={`${process.env.BASE_PATH}/images/marketplace/marketFilter/All.png`} alt="" />
                         <div className="type-name">All</div>
                     </div>
 
                     <div
-                        className={`type ${selectedType === 'Rider' ? 'current' : ''}`}
-                        onClick={() => setSelectedType('Rider')}
+                        className={`type ${selectedType === 'rider' ? 'current' : ''}`}
+                        onClick={() => typeSelect('rider')}
                     >
                         <img className="type-icon" src={`${process.env.BASE_PATH}/images/marketplace/marketFilter/Rider.png`} alt="" />
                         <div className="type-name">Rider</div>
                     </div>
 
                     <div
-                        className={`type ${selectedType === 'Item' ? 'current' : ''}`}
-                        onClick={() => setSelectedType('Item')}
+                        className={`type ${selectedType === 'item' ? 'current' : ''}`}
+                        onClick={() => typeSelect('item')}
                     >
                         <img className="type-icon" src={`${process.env.BASE_PATH}/images/marketplace/marketFilter/Item.png`} alt="" />
                         <div className="type-name">Item</div>
                     </div>
 
                     <div
-                        className={`type ${selectedType === 'Land' ? 'current' : ''}`}
-                        onClick={() => setSelectedType('Land')}
+                        className={`type ${selectedType === 'land' ? 'current' : ''}`}
+                        onClick={() => typeSelect('land')}
                     >
                         <img className="type-icon" src={`${process.env.BASE_PATH}/images/marketplace/marketFilter/Land.png`} alt="" />
                         <div className="type-name">Land</div>
@@ -75,12 +130,12 @@ export default function MarketNavigation({ onSelectChange }) {
                 <div className="right-block">
 
                     <div className="dropdown-block">
-                        <FilterDropdown />
+                        <FilterDropdown onSelectChange={handleSelectChange} />
                     </div>
 
                     <div className="dropdown-block">
 
-                        <div className="button" id="button-sort">
+                        <div className="button" id="button-sort" onClick={() => sort(selectedCardData)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="14.161" height="13.126" viewBox="0 0 14.161 13.126">
                                 <g id="arrows-vertical" transform="translate(-3.021 -4.146)">
                                     <path id="Path_4468" data-name="Path 4468" d="M24.61,13.09l-1.863,1.863V4.5H21.712V14.953L19.849,13.09l-.724.724,3.1,3.1,3.1-3.1Z" transform="translate(-8.505 0)" fill="#c5cbfe" stroke="#c5cbfe" strokeWidth="0.5" />

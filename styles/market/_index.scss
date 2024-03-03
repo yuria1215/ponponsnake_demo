@@ -2,14 +2,15 @@
 @import './_CardList';
 @import './_FilterDropdown';
 
-.market_background{
+.market_background {
     background-image: linear-gradient(to bottom, #111427, #222450 83%, #2a2b63);
     // height: 1000px;
     padding: 150px 0 230px;
+    min-height: 1000px;
 }
 
-.market-title{
-    margin:  auto ;
+.market-title {
+    margin: auto;
     padding: 0 0 85px;
     color: var(--white);
     font-size: 46px;

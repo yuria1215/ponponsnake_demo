@@ -4,8 +4,6 @@ import Layout from "@/components/layout/Layout";
 import MarketNavigation from '@/components/market/MarketNavigation';
 import CardList from '@/components/market/CardList';
 
-
-
 export default function Marketplace() {
 
   // 定義選擇後的卡片資料
@@ -13,6 +11,7 @@ export default function Marketplace() {
 
   // 在MarketFilter组件中更新選擇後的卡片資料的回調函數
   const handleSelectChange = (data) => {
+    console.log('handleSelectChange', data);
     setSelectedCardData(data);
   };
 
