@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {imgUrl} from '@/utils/tool.js'
+import { imgUrl } from '@/utils/tool.js'
 import FilterDropdown from './FilterDropdown.js';
 
 export default function MarketNavigation({ onChange }) {
@@ -16,9 +16,9 @@ export default function MarketNavigation({ onChange }) {
     ]
 
     // 分類選擇並向上層傳遞
-	const typeSelect = type => {
+    const typeSelect = type => {
         setSelectedType(type);
-        onChange({type})
+        onChange({ type })
     }
 
     // 子層勾選事件並向上層傳遞
@@ -28,31 +28,31 @@ export default function MarketNavigation({ onChange }) {
     const sort = () => {
         const flag = !isSort
         setIsSort(flag)
-        onChange({isSort: flag})
+        onChange({ isSort: flag })
     }
 
     return (
         <section className="market-navigation">
             <div className="market-navigation-block">
                 <div className="left-block">
-					{
-						types && types.map(({type, name}) => (
-							<div
-								className={`type ${selectedType === type ? 'current' : ''}`}
-								key={type}
-								onClick={() => typeSelect(type)}
-							>
-								<img className="type-icon" src={imgUrl(`images/marketplace/marketFilter/${type}.png`)} alt="" />
-								<div className="type-name">{ name }</div>
-							</div>
-						))
-					}
+                    {
+                        types && types.map(({ type, name }) => (
+                            <div
+                                className={`type ${selectedType === type ? 'current' : ''}`}
+                                key={type}
+                                onClick={() => typeSelect(type)}
+                            >
+                                <img className="type-icon" src={imgUrl(`images/marketplace/marketFilter/${type}.png`)} alt="" />
+                                <div className="type-name">{name}</div>
+                            </div>
+                        ))
+                    }
                 </div>
 
                 <div className="right-block">
 
                     <div className="dropdown-block">
-                        <FilterDropdown onChange={onFilterDropdownChange}/>
+                        <FilterDropdown onChange={onFilterDropdownChange} />
                     </div>
 
                     <div className="dropdown-block">

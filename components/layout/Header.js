@@ -188,7 +188,7 @@ export default function Header() {
             <Link href="/">Home</Link>
           </li>
           <li className={`nav-item ${router.pathname === '/market' ? 'current' : ''}`}>
-            <Link href="/market_new">Market</Link>
+            <Link href="/market">Market</Link>
           </li>
           <li className="nav-item">
             <Link href="#">Arena</Link>
