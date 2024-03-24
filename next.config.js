@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const basePath = "/ponponsnake_demo";
+let basePath = "/ponponsnake_demo";
 const isProd = process.env.NODE_ENV === "production";
+
+if (process.env.baseEmpty == 'true') {
+  basePath = "";
+}
 
 const nextConfig = {
   reactStrictMode: true,

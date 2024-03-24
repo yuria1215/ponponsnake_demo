@@ -1,12 +1,6 @@
 {
   "hosting": {
-    "public": "out",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/project/index.html"
-      }
-    ],
+    "public": "firebase_out",
     "ignore": [
       "firebase.json",
       "**/.*",

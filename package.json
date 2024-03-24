@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "build:firebase": "cross-env baseEmpty=true next build && next export -o firebase_out/ ",
+    "deploy:firebase": "firebase deploy",
     "start": "next start",
     "lint": "next lint",
     "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Build & Deploy gh-pages\" && git subtree push --prefix out origin gh-pages",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
     "gh-pages": "^6.1.1",
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
