@@ -12,7 +12,13 @@ pnpm dev
 ```
 
 
-```build
+```sh
 npm run build
 npm run deploy
+
+# firebase
+# 打包
+npm run build:firebase 
+# 部屬
+npm run deploy:firebase
 ```
