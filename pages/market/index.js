@@ -11,7 +11,6 @@ export default function Marketplace() {
 
   // 在MarketFilter组件中更新選擇後的卡片資料的回調函數
   const handleSelectChange = (data) => {
-    console.log('handleSelectChange', data);
     setSelectedCardData(data);
   };
 

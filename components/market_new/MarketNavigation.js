@@ -42,7 +42,7 @@ export default function MarketNavigation({ onChange }) {
                                 key={type}
                                 onClick={() => typeSelect(type)}
                             >
-                                <img className="type-icon" src={imgUrl(`images/marketplace/marketFilter/${type}.png`)} alt="" />
+                                <img className="type-icon" src={imgUrl(`images/marketplace/marketFilter/${name}.png`)} alt="" />
                                 <div className="type-name">{name}</div>
                             </div>
                         ))
